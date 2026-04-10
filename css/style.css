@@ -7,31 +7,69 @@
 
 /* Объявление переменной root для свойств */
 :root {
-    --primary-color: #4C3D74;
+    --primary-color: #0a2f2a;
 
-    --primary-alternaite-color: #504178;
+    --primary-alternaite-color: #1a5c41;
 
-    --secondary-color: #FFFFFF;
+    --secondary-color: #ffffff;
 
     --border-radius: 30px;
 
-    --primary-color-button: #A387C4;
+    --primary-color-button: #e9b13b;
+
+    --primary-color-button-hover: #f5c542;
+
+    --primary-color-button-dark: #b87a1a;
+
+    --prefers-color-scheme: #0f1e2b;
+
+    --background-color-card: #fffaf0;
+
+    --background-color-footer: #0a2f2a;
+
+    --input-color: #fffef7;
+
+    --text-dark: #0a2f2a;
+
+    --text-muted: #2d6a4f;
+
+    --text-gold: #e9b13b;
+
+    --text-gold-dark: #b87a1a;
+
+    --text-light-gold: #fef0c0;
+
+    --line-color: rgba(233, 177, 59, 0.25);
+
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    --shadow-gold: 0 10px 30px rgba(233, 177, 59, 0.25);
+
+    --gradient-gold: linear-gradient(135deg, #f5c542 0%, #e9b13b 45%, #c4891a 100%);
+
+    --gradient-dark: linear-gradient(135deg, #0a2f2a 0%, #1a5c41 100%);
+
+    --gradient-title: linear-gradient(135deg, #e9b13b 0%, #f5c542 50%, #fff0a0 100%);
+
+    --gradient-card: linear-gradient(145deg, #ffffff 0%, #fffaf0 100%);
+
+    --gradient-emerald: linear-gradient(135deg, #0a2f2a 0%, #1a5c41 50%, #2d8c66 100%);
+
+    --shadow-emerald: 0 10px 25px rgba(26, 92, 65, 0.3);
+    
+    --glow-gold: 0 0 15px rgba(233, 177, 59, 0.5);
+
+    --gradient-emerald: linear-gradient(180deg, #0a2f2a 0%, #1a5c41 50%, #2d8c66 100%);
+
+    --gradient-emerald-flipped: linear-gradient(0deg, #0a2f2a 0%, #1a5c41 50%, #2d8c66 100%);
+
+    --border-radius: 30px;
 
     --transition: 0.3s ease;
 
-    --prefers-color-scheme: #000000;
-
     --font-family: 'Montserrat', system-ui, sans-serif;
 
-    --background-color-card: #F2EEF7;
-
-    --background-color-footer: #251933;
-
-    --input-color: #F8F1FF;
-
     --border-radius-btn-register-login: 7px;
-
-    --background-color--btn-register-login: #985ACE;
 }
 
 /* Подключение шрифта "Montserrat" */
@@ -58,7 +96,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--primary-color);
+    background: var(--gradient-emerald);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,9 +121,9 @@
     transform: translateX(-50%);
     width: 80px;
     height: 120px;
-    background: linear-gradient(45deg, #2A1F40, #1A132D);
+    background: linear-gradient(45deg, #0a2f2a, #1a5c41);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),inset 0 -10px 20px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), inset 0 -10px 20px rgba(255, 255, 255, 0.08);
 }
 
 /* Крышка туши */
@@ -96,7 +134,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 25px;
-    background: linear-gradient(45deg, #A387C4, #8A63B5);
+    background: var(--gradient-gold);
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
@@ -115,7 +153,7 @@
 .brush-handle {
     width: 8px;
     height: 80px;
-    background: #000000;
+    background: #b87a1a;
     border-radius: 4px;
     position: relative;
 }
@@ -128,7 +166,7 @@
     transform: translateX(-50%);
     width: 25px;
     height: 30px;
-    background: linear-gradient(to bottom, var(--secondary-color), #f0f0f0);
+    background: linear-gradient(to bottom, #fef0c0, #e9b13b);
     border-radius: 50% 50% 0 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -142,7 +180,7 @@
     transform: translateX(-50%);
     width: 20px;
     height: 15px;
-    background: var(--secondary-color);
+    background: var(--text-light-gold);
     border-radius: 50% 50% 0 0;
 }
 
@@ -185,7 +223,7 @@
     position: absolute;
     width: 8px;
     height: 12px;
-    background: #A387C4;
+    background: #e9b13b;
     border-radius: 50%;
     opacity: 0;
 }
@@ -230,7 +268,8 @@
     bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
+    text-shadow: 0 0 8px rgba(233, 177, 59, 0.5);
     font-size: 16px;
     opacity: 0;
     animation: textAppear 2s ease-in-out 1s forwards;
@@ -353,10 +392,35 @@ html {
     }
 } */
 
+/* Фоны под шапку и баннер */
+.background-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: clamp(850px, 100vh, 1080px);
+    z-index: 0;
+    background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+    background-size: cover;
+    background-position: center 15%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.header::before,
+.header::after,
+.banner::before,
+.banner::after {
+    content: none;
+}
+
 /* Шапка */
 .header {
     padding-top: 105px;
-    background-color: var(--primary-color);
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 .header__wrapper {
@@ -370,15 +434,18 @@ html {
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-    color: var(--secondary-color);
+    background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     text-transform: uppercase;
     cursor: pointer;
     transition: var(--transition);
 }
 
 .logo:hover {
-    color: var(--primary-color-button);
-    text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
 }
 
 .nav__menu {
@@ -392,28 +459,31 @@ html {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 14px;
-    color: var(--secondary-color);
+    color: #2d8c66;
     text-transform: uppercase;
     transition: var(--transition);
     cursor: pointer;
 }
 
 .nav__item:hover {
-    color: var(--primary-color-button);
-    text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
 }
 
 /* Главный экран */
 .banner {
     padding-top: 103px;
-    background-color: var(--primary-color);
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 .banner__mini--title {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 20px;
-    color: var(--secondary-color);
+    color: #B07A2A;
+    text-shadow: 0 1px 0 #e6c27a, 0 2px 4px rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
 }
 
@@ -422,7 +492,11 @@ html {
     font-weight: 700;
     font-size: 50px;
     line-height: 66px;
-    color: var(--secondary-color);
+    background: linear-gradient(180deg, #fff3b0 0%, #f5d77a 25%, #e0b84f 50%, #c88f2a 75%, #a86f1f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 0 #fff3b0, 0 2px 0 #e0b84f, 0 3px 0 #c88f2a, 0 4px 6px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.5));
     text-transform: uppercase;
     max-width: 761px;
     margin-top: 19px;
@@ -433,7 +507,7 @@ html {
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
-    color: var(--secondary-color);
+    color: #000000;
     margin-top: 29px;
     max-width: 485px;
     text-transform: uppercase;
@@ -448,7 +522,6 @@ html {
 }
 
 .button {
-    background-color: var(--primary-color-button);
     border-radius: var(--border-radius);
     padding: 20px 65px;
     font-family: var(--font-family);
@@ -457,37 +530,40 @@ html {
     color: var(--secondary-color);
     text-transform: uppercase;
     transition: var(--transition);
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #A86412;
     text-align: center;
+    background: linear-gradient(180deg, #E29A2A 0%, #C77B1A 60%, #A86412 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .button:hover {
-    border: 3px solid var(--primary-color-button);
-    background-color: transparent;
-    color: var(--secondary-color);
-    box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-    text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+    border: 3px solid #A86412;
+    background: transparent;
+    color: #000000;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px rgba(0,0,0,0.25);
 }
 
 .btn {
     border-radius: var(--border-radius);
-    background-color: transparent;
-    color: var(--secondary-color);
+    background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+    color: #ffffff;
     padding: 20px 65px;
     font-weight: 700;
     font-family: var(--font-family);
     font-size: 16px;
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #2d8c66;
     text-transform: uppercase;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     text-align: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
 }
 
 .btn:hover {
-    background-color: var(--primary-color-button);
-    color: var(--secondary-color);
-    border-color: var(--primary-color-button);
-    box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+    background: transparent;
+    color: #2d8c66;
+    border-color: #2d8c66;
+    box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
 }
 
 .images {
@@ -499,24 +575,11 @@ html {
     z-index: 2;
     transition: transform var(--transition);
     cursor: pointer;
+    filter: drop-shadow(0 20px 30px rgba(233, 177, 59, 0.4));
 }
 
 .images:hover {
     transform: scale(1.1);
-}
-
-.bg-effect {
-    position: absolute;
-    width: 718px;
-    height: 800px;
-    left: 50%;
-    top: -120px;
-    border-radius: 50%;
-    filter: blur(30px);
-    z-index: 1;
-    left: 75%;
-    transform: translateX(-50%);
-    max-width: 80vw;
 }
 
 /* Для кого? */
@@ -530,7 +593,11 @@ html {
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
-    color: var(--primary-alternaite-color);
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleGlow 2s ease-in-out infinite alternate;
     margin-bottom: 46px;
 }
 
@@ -549,8 +616,9 @@ html {
 }
 
 .for-whom__card {
-    background: var(--background-color-card);
-    border: 3px solid var(--primary-color);
+    background: var(--gradient-card);
+    border: 3px solid rgba(233, 177, 59, 0.3);
+    box-shadow: var(--shadow-soft);
     border-radius: var(--border-radius);
     width: 341px;
     min-height: 138px;
@@ -558,6 +626,14 @@ html {
     position: relative;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.for-whom__card:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-gold);
+    box-shadow: var(--shadow-gold);
 }
 
 .for-whom__card--between {
@@ -568,17 +644,25 @@ html {
 }
 
 .for-whom__images {
-    width: 84px;
-    height: 84px;
+    width: 60px;
+    height: 60px;
     position: absolute;
-    left: -42px;
+    left: -32px;
     top: 45%;
     transform: translateY(-50%);
     z-index: 2;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.for-whom__images {
+    transform: translateY(-50%) scale(1.1);
+    filter: drop-shadow(0 6px 12px rgba(233, 177, 59, 0.5));
 }
 
 .for-whom__desc {
-    color: var(--primary-color);
+    color: var(--text-dark);
     font-size: 16px;
     font-family: var(--font-family);
     line-height: 130%;
@@ -589,7 +673,7 @@ html {
 }
 
 .for-whom__span {
-    color: var(--primary-color);
+    color: var(--text-gold-dark);
     font-weight: 700;
 }
 
@@ -606,19 +690,20 @@ html {
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
-    color: var(--primary-color);
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     text-transform: uppercase;
     width: 511px;
 }
 
 .button__for-whom {
-    background-color: var(--primary-color-button);
+    background: var(--gradient-gold);
     border-radius: var(--border-radius);
     padding: 20px 65px;
     font-family: var(--font-family);
     font-size: 16px;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-transform: uppercase;
     transition: var(--transition);
     border: 3px solid var(--primary-color-button);
@@ -626,10 +711,7 @@ html {
 }
 
 .button__for-whom:hover {
-    background-color: transparent;
-    color: var(--primary-color-button);
-    border-color: var(--primary-color-button);
-    box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+    box-shadow: 0 15px 35px rgba(233, 177, 59, 0.5);
 }
 
 .super__woman--images {
@@ -638,16 +720,25 @@ html {
     top: 1px;
     width: 243px;
     height: 243px;
+    filter: drop-shadow(0 15px 30px rgba(233, 177, 59, 0.4));
 }
 
 /* Что будет на интенсиве? */
 .program {
-    background-color: var(--primary-color);
+    background: var(--gradient-emerald);
     padding-top: 168px;
 }
 
+.program::after {
+    background: linear-gradient(180deg, #1a5c41 0%, #0a2f2a 100%);
+}
+
 .program__content--title {
-    color: var(--secondary-color);
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleGlow 2s ease-in-out infinite alternate;
     font-family: var(--font-family);
     font-size: 50px;
     text-align: center;
@@ -668,6 +759,20 @@ html {
     align-items: center;
     gap: 23px;
     min-width: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius);
+    padding: 20px 15px;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(233, 177, 59, 0.2);
+    cursor: pointer;
+}
+
+.program__content--list:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-gold);
+    background: rgba(233, 177, 59, 0.15);
+    box-shadow: var(--shadow-gold);
 }
 
 .program__images {
@@ -676,6 +781,7 @@ html {
     flex-shrink: 0;
     transition: var(--transition);
     cursor: pointer;
+    filter: drop-shadow(0 0 15px rgba(233, 177, 59, 0.9));
 }
 
 .program__images:hover {
@@ -695,7 +801,7 @@ html {
 .program__span {
     font-size: 16px;
     line-height: 150%;
-    color: var(--secondary-color);
+    color: var(--text-gold);
     font-weight: 700;
     font-family: var(--font-family);
     text-transform: uppercase;
@@ -704,14 +810,18 @@ html {
 /* О Юлии Ворман */
 .about {
     padding-top: 146px;
-    background-color: var(--primary-color);
+    background: var(--gradient-emerald-flipped);
 }
 
 .about__title {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 50px;
-    color: var(--secondary-color);
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleGlow 2s ease-in-out infinite alternate;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 31px;
@@ -724,12 +834,13 @@ html {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
     margin-bottom: 38px;
 }
 
 .about__text--span {
     font-weight: 700;
+    color: var(--text-gold);
 }
 
 .about__text--item {
@@ -739,12 +850,13 @@ html {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
     margin-bottom: 20px;
 }
 
 .about__text--item--span {
     font-weight: 700;
+    color: var(--text-gold);
 }
 
 /* Стили для индикаторов - Уменьшено расстояние между колонками */
@@ -771,7 +883,10 @@ html {
     font-weight: 700;
     font-size: 50px;
     line-height: 66px;
-    color: var(--secondary-color);
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .indicator_text {
@@ -780,7 +895,7 @@ html {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
 }
 
 .about__text--footer {
@@ -788,7 +903,7 @@ html {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
     width: 645px;
     text-transform: uppercase;
     padding-bottom: 176px;
@@ -796,6 +911,7 @@ html {
 
 .about__text--footer--span {
     font-weight: 700;
+    color: var(--text-gold);
 }
 
 .about__main--images {
@@ -805,6 +921,15 @@ html {
     width: 349px;
     height: 451px;
     border-radius: var(--border-radius);
+    transition: var(--transition);
+    box-shadow: var(--shadow-gold);
+    border: 3px solid rgba(233, 177, 59, 0.3);
+}
+
+.about__main--images:hover {
+    transform: scale(1.02);
+    border-color: var(--text-gold);
+    box-shadow: 0 20px 40px rgba(233, 177, 59, 0.4);
 }
 
 /* Лист уроков интенсива */
@@ -820,10 +945,15 @@ html {
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 46px;
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 .accordion-item1 {
-    border-bottom: 3px solid var(--primary-color);
+    border-bottom: 3px solid rgba(26, 92, 65, 0.15);
 }
 
 .accordion {
@@ -832,7 +962,7 @@ html {
 }
 
 .accordion-item {
-    border-bottom: 3px solid var(--primary-color);
+    border-bottom: 3px solid rgba(26, 92, 65, 0.15);
 }
 
 .accordion-toggle {
@@ -863,6 +993,10 @@ html {
     text-transform: uppercase;
 }
 
+.accordion-label:hover .lesson-title {
+    color: var(--text-gold-dark);
+}
+
 .icon {
     position: relative;
     width: 20px;
@@ -874,7 +1008,7 @@ html {
 .icon::before, .icon::after {
     content: '';
     position: absolute;
-    background-color: var(--primary-color);
+    background-color: var(--text-gold-dark);
     transition: var(--transition);
 }
 
@@ -914,7 +1048,7 @@ html {
     background-color: transparent !important;
     font-size: 15px;
     line-height: 1.6;
-    color: var(--primary-color);
+    color: var(--text-muted);
 }
 
 /* Когда аккордеон открыт */
@@ -940,17 +1074,27 @@ html {
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
-    color: var(--primary-color);
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     width: 350px;
 }
 
 .lesson--title--number {
     font-weight: 700;
+    color: var(--text-gold);
+}
+
+/* При наведении на весь блок .accordion-label меняется текст */
+.accordion-label:hover .lesson--title--number {
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
+    text-shadow: none;
+    animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 /* Тарифы */
 .pricing {
-    background-color: var(--primary-color);
+    background: var(--gradient-emerald);
     padding-top: 168px;
 }
 
@@ -959,9 +1103,13 @@ html {
     font-weight: 700;
     font-size: 50px;
     text-align: center;
-    color: var(--secondary-color);
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     text-transform: uppercase;
     margin-bottom: 46px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 .pricing__content__card--wrapper {
@@ -971,18 +1119,29 @@ html {
 }
 
 .pricing__content--card {
-    background-color: var(--background-color-card);
+    background: var(--gradient-card);
     border-radius: var(--border-radius);
     width: 375px;
     padding: 57px 30px 0 36px;
     position: relative;
+    border: 2px solid rgba(233, 177, 59, 0.2);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.pricing__content--card:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-gold);
+    box-shadow: var(--shadow-gold);
 }
 
 .pricing__content__card--title {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
-    color: var(--primary-color);
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     text-transform: uppercase;
     margin-bottom: 15px;
 }
@@ -993,7 +1152,7 @@ html {
     font-size: 15px;
     line-height: 150%;
     text-transform: uppercase;
-    color: var(--primary-color);
+    color: var(--text-dark);
     margin-bottom: 8px;
     display: flex;
     gap: 8px;
@@ -1003,13 +1162,14 @@ html {
     font-weight: 700;
     font-size: 25px;
     flex-shrink: 0;
+    color: var(--text-gold-dark);
 }
 
 .pricing__content--duration {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
-    color: var(--primary-color);
+    color: var(--text-dark);
     text-transform: uppercase;
     margin-top: 18px;
     margin-bottom: 8px;
@@ -1020,7 +1180,7 @@ html {
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 12px;
-    color: var(--primary-color);
+    color: var(--text-dark);
     text-transform: uppercase;
     margin: 0;
     margin-right: 50px;
@@ -1030,6 +1190,7 @@ html {
 
 .pricing__content__condition--span {
     font-weight: 700;
+    color: var(--text-gold-dark);
 }
 
 .pricing__content--price {
@@ -1037,43 +1198,41 @@ html {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
-    color: var(--primary-color);
+    color: var(--text-gold-dark);
     margin: 0;
     text-align: center;
 }
 
 .pricing__content--button {
-    background-color: var(--primary-color-button);
+    background: var(--gradient-gold);
     border-radius: var(--border-radius);
     padding: 20px 75px;
     font-family: var(--font-family);
     font-size: 16px;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-transform: uppercase;
     transition: var(--transition);
     border: 3px solid var(--primary-color-button);
+    box-shadow: var(--shadow-gold);
     margin-left: 10px;
 }
 
 .pricing__content--button:hover {
-    border: 3px solid var(--primary-color);
-    background-color: var(--primary-color-button);
     color: var(--secondary-color);
-    border-color: var(--primary-color-button);
-    box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-    text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+    box-shadow: 0 15px 35px rgba(233, 177, 59, 0.5);
 }
 
 .pricing__content--images {
     position: absolute;
     top: -40px;
-    left: 275px;
-    width: 128px;
-    height: 128px;
-    object-fit: cover;
+    left: 290px;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
     transition: var(--transition);
     cursor: pointer;
+    filter: drop-shadow(0 10px 20px rgba(233, 177, 59, 0.5));
 }
 
 .pricing__content--images:hover {
@@ -1093,10 +1252,12 @@ html {
     height: 67px;
     transition: var(--transition);
     cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba(233, 177, 59, 0.5));
 }
 
 .pricing__content__images--gift:hover {
     transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(233, 177, 59, 0.9));
 }
 
 .pricing__content__stories--text {
@@ -1105,12 +1266,13 @@ html {
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
 }
 
 .btn__stories {
-    border: 4px solid var(--primary-color-button);
+    border: 4px solid var(--text-gold);
     background-color: transparent;
     color: var(--secondary-color);
     padding: 20px 40px;
@@ -1125,10 +1287,9 @@ html {
 }
 
 .btn__stories:hover {
-    background-color: var(--primary-color-button);
-    color: var(--secondary-color);
-    border-color: var(--primary-color-button);
-    box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+    background: var(--gradient-gold);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-gold);
 }
 
 .short__name {
@@ -1143,7 +1304,8 @@ html {
 }
 
 .short__name:hover {
-    color: var(--primary-color-button);
+    color: var(--text-gold);
+    text-shadow: var(--glow-gold);
 }
 
 /* А такие вопросы могут возникнуть у вас */
@@ -1155,10 +1317,14 @@ html {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 50px;
-    color: var(--primary-alternaite-color);
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 46px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 .questions__accordion {
@@ -1202,6 +1368,10 @@ html {
     text-transform: uppercase;
 }
 
+.accordion-label:hover .question-title {
+    color: var(--text-gold-dark);
+}
+
 .icon {
     position: relative;
     width: 20px;
@@ -1213,7 +1383,7 @@ html {
 .icon::before, .icon::after {
     content: '';
     position: absolute;
-    background-color: var(--primary-color);
+    background-color: var(--text-gold-dark);
     transition: var(--transition);
 }
 
@@ -1267,14 +1437,16 @@ html {
 }
 
 .bx.bxl-telegram {
-    color: var(--prefers-color-scheme);
     font-size: 50px;
     cursor: pointer;
     transition: var(--transition);
+    color: var(--text-gold);
+    filter: drop-shadow(0 0 8px rgba(233, 177, 59, 0.5));
 }
 
 .bx.bxl-telegram:hover {
     color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 .questions__text {
@@ -1282,7 +1454,8 @@ html {
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
-    color: var(--primary-color);
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     text-transform: uppercase;
     width: 399px;
 }
@@ -1291,7 +1464,7 @@ html {
 .footer {
     padding-top: 125px;
     padding-bottom: 109px;
-    background-color: var(--background-color-footer);
+    background: var(--gradient-emerald);
     width: 100%;
     position: relative;
 }
@@ -1318,14 +1491,15 @@ html {
 }
 
 .footer__logo:hover {
-    color: var(--primary-color-button);
+    color: var(--text-gold);
+    text-shadow: var(--glow-gold);
 }
 
 .inn {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
     text-transform: uppercase;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -1335,7 +1509,7 @@ html {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
     text-transform: uppercase;
     line-height: 1.4;
 }
@@ -1370,8 +1544,9 @@ html {
 }
 
 .up__link:hover .bx.bx-up-arrow-alt {
-    color: var(--primary-color-button);
-    transform: scale(1.1);
+    color: var(--text-gold);
+    transform: scale(1.1) translateY(-5px);
+    filter: drop-shadow(0 0 10px rgba(233, 177, 59, 0.5));
 }
 
 /* Иконки соцсетей */
@@ -1388,13 +1563,15 @@ html {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(233, 177, 59, 0.3);
     transition: var(--transition);
 }
 
 .social__icons a:hover {
-    background-color: var(--primary-color-button);
+    background: var(--gradient-gold);
     transform: scale(1.1);
+    border-color: transparent;
 }
 
 .social__icons i {
@@ -1419,13 +1596,14 @@ html {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
     text-transform: uppercase;
     transition: var(--transition);
 }
 
 .political__confidencial:hover, .oferta:hover, .hire__me:hover {
-    color: var(--primary-color-button);
+    color: var(--text-gold);
+    text-shadow: var(--glow-gold);
 }
 
 .social__icons {
@@ -1439,19 +1617,32 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
+    background: transparent;
+}
+
+.form::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternative.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .form__container {
     display: flex;
     justify-content: center;
     padding: 60px;
-    background-color: var(--secondary-color);
+    background: var(--gradient-card);
     border-radius: var(--border-radius);
     width: 100%;
     max-width: 460px;
     margin: 0 20px;
     flex-direction: column;
+    border: 2px solid rgba(233, 177, 59, 0.3);
+    box-shadow: var(--shadow-gold);
 }
 
 .form__tabs {
@@ -1466,17 +1657,17 @@ html {
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
-    color: var(--prefers-color-scheme);
+    color: var(--text-muted);
     cursor: pointer;
     transition: var(--transition);
 }
 
 .form__tab:hover {
-    color: var(--primary-color);
+    color: var(--text-gold-dark);
 }
 
 .form__tab--active {
-    color: var(--primary-color);
+    color: var(--text-gold-dark);
 }
 
 .form__container--group {
@@ -1503,18 +1694,20 @@ html {
 }
 
 .form__field:focus-within {
-    border-color: var(--primary-color-button);
+    border-color: var(--text-gold);
 }
 
 .label {
     display: flex;
     margin: 2px 0;
     opacity: 0.6;
-    color: #403A4B;
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
 }
 
 .btn__register {
-    background-color: var(--primary-color-button);
+    background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+    box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
     border-radius: var(--border-radius);
     padding: 16px;
     font-family: var(--font-family);
@@ -1523,7 +1716,7 @@ html {
     color: var(--secondary-color);
     text-transform: uppercase;
     transition: var(--transition);
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #2d8c66;
     text-align: center;
     width: 100%;
     margin-bottom: 21px;
@@ -1532,16 +1725,14 @@ html {
 }
 
 .btn__register:hover {
-    border: 3px solid var(--primary-color-button);
-    background-color: var(--primary-color-button);
-    color: var(--secondary-color);
-    border-color: var(--primary-color-button);
-    box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-    text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+    background: transparent;
+    color: #2d8c66;
+    border-color: #2d8c66;
+    box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
 }
 
 .hr {
-    border-bottom: 1px solid var(--prefers-color-scheme);
+    border-bottom: 1px solid var(--line-color);
 }
 
 .btn__continue {
@@ -1551,7 +1742,8 @@ html {
     column-gap: 9px;
     background: transparent;
     border-radius: var(--border-radius);
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #2d8c66;
+    box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
     padding: 16px;
     color: var(--prefers-color-scheme);
     font-family: var(--font-family);
@@ -1562,9 +1754,10 @@ html {
 }
 
 .btn__continue:hover {
-    background-color: var(--primary-color-button);
-    color: var(--secondary-color);
-    border: 3px solid var(--primary-color-button);
+    background: transparent;
+    color: #2d8c66;
+    border-color: #2d8c66;
+    box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
 }
 
 .bx.bxl-google {
@@ -1578,18 +1771,19 @@ html {
     column-gap: 9px;
     cursor: pointer;
     font-family: var(--font-family);
-    color: var(--prefers-color-scheme);
+    color: var(--text-dark);
 }
 
 .checkbox {
     width: 18px;
     height: 18px;
+    accent-color: var(--text-gold);
 }
 
 .forgot__password {
     text-align: center;
     text-decoration: none;
-    color: var(--prefers-color-scheme);
+    color: var(--text-muted);
     font-size: 12px;
     margin-top: 5px;
     font-family: var(--font-family);
@@ -1597,7 +1791,7 @@ html {
 }
 
 .forgot__password:hover {
-    color: var(--primary-color);
+    color: var(--text-gold-dark);
 }
 
 /* Для предзаписи */
@@ -1608,6 +1802,7 @@ html {
     font-family: var(--font-family);
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--text-gold-dark);
 }
 
 .remembers__me {
@@ -1616,7 +1811,7 @@ html {
     column-gap: 9px;
     cursor: pointer;
     font-family: var(--font-family);
-    color: var(--prefers-color-scheme);
+    color: var(--text-dark);
     margin-top: 21px;
 }
 
@@ -1629,7 +1824,7 @@ html {
 }
 
 .btn__pre--recording {
-    background-color: var(--primary-color-button);
+    background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
     border-radius: var(--border-radius);
     padding: 20px 65px;
     font-family: var(--font-family);
@@ -1638,17 +1833,18 @@ html {
     color: var(--secondary-color);
     text-transform: uppercase;
     transition: var(--transition);
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #2d8c66;
+    box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
     text-align: center;
     width: 100%;
     margin-top: 37px;
 }
 
 .btn__pre--recording:hover {
-    background-color: transparent;
-    color: var(--primary-color-button);
-    border-color: var(--primary-color-button);
-    box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+    background: transparent;
+    color: #2d8c66;
+    border-color: #2d8c66;
+    box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
 }
 
 /* Файлы Cookie */
@@ -1667,16 +1863,14 @@ html {
     transform: translateX(-50%);
     width: 100%;
     max-width: 600px;
-    background: var(--primary-color);
-    border: 3px solid var(--secondary-color);
+    background: var(--gradient-emerald);
+    border: 2px solid rgba(233, 177, 59, 0.4);
     border-radius: var(--border-radius);
     padding: 20px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
     z-index: 10000;
-
     opacity: 0;
     transform: translateX(-50%) translateY(100px);
-    
     animation: slideInUp 0.5s ease-out 4.5s forwards;
 }
 
@@ -1698,7 +1892,7 @@ html {
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 16px;
-    color: var(--secondary-color);
+    color: var(--text-light-gold);
     line-height: 1.4;
 }
 
@@ -1710,6 +1904,7 @@ html {
 
 .bx.bxs-cookie:hover {
     transform: scale(1.1) rotate(10deg);
+    filter: drop-shadow(0 0 10px rgba(233, 177, 59, 0.5));
 }
 
 .cookie__container--label {
@@ -1720,88 +1915,47 @@ html {
 }
 
 .cookie__accept {
-    background-color: var(--primary-color-button);
     border-radius: var(--border-radius);
     padding: 8px 16px;
     font-family: var(--font-family);
     font-size: 16px;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: #000000;
     text-transform: uppercase;
     transition: var(--transition);
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #A86412;
+    background: linear-gradient(180deg, #E29A2A 0%, #C77B1A 60%, #A86412 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     text-align: center;
 }
 
 .cookie__accept:hover {
-    border: 3px solid var(--primary-color-button);
-    background-color: transparent;
+    border: 3px solid #A86412;
+    background: transparent;
     color: var(--secondary-color);
-    box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-    text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px rgba(0,0,0,0.25);
 }
 
 .cookie__decline {
     border-radius: var(--border-radius);
-    background-color: transparent;
+    background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
     color: var(--secondary-color);
     padding: 8px 16px;
     font-weight: 700;
     font-family: var(--font-family);
     font-size: 16px;
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #2d8c66;
+    box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
     text-transform: uppercase;
     transition: var(--transition);
     text-align: center;
 }
 
 .cookie__decline:hover {
-    background-color: var(--primary-color-button);
+    background: transparent;
     color: var(--secondary-color);
-    border-color: var(--primary-color-button);
-    box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
-}
-
-/* КНОПКА ДОКУМЕНТАЦИИ */
-.doc_toggle--btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: rgba(30, 30, 40, 0.95);
-    border-radius: var(--border-radius);
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    cursor: pointer;
-    z-index: 10001;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
-    animation: showDocButton 0.5s ease-in-out 4.5s forwards;
-}
-
-@keyframes showDocButton {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
-}
-
-.doc_toggle--btn i {
-    font-size: 34px;
-    color: #888888;
-    transition: var(--transition);
-}
-
-.doc_toggle--btn:hover i {
-    color: var(--primary-color-button);
+    border-color: #2d8c66;
+    box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
 }
 
 /* Модалка */
@@ -1827,8 +1981,9 @@ html {
     width: min(520px, 100%);
     border-radius: 18px;
     padding: 22px 18px 18px;
-    background: #ffffff;
+    background: var(--gradient-card);
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(233, 177, 59, 0.3);
     position: relative;
 
     transform: translateY(8px) scale(0.98);
@@ -1851,7 +2006,8 @@ html {
     border: none;
     border-radius: 999px;
     cursor: pointer;
-    background: transparent;
+    color: #3da87a;
+    text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     font-size: 28px;
     line-height: 42px;
 }
@@ -1865,12 +2021,14 @@ html {
     margin: 0 0 10px;
     font-size: 22px;
     font-family: var(--font-family);
+    color: var(--text-gold-dark);
 }
 
 .form__success-text {
     margin: 0 0 14px;
     line-height: 1.4;
     font-family: var(--font-family);
+    color: var(--text-dark);
 }
 
 .form__code-wrapper {
@@ -1897,7 +2055,7 @@ html {
 .form__code {
     display: flex;
     align-items: center;
-    background: #f1f1f1;
+    background: var(--input-color);
     border-radius: 12px;
     padding: 11px 14px 18px 18px;
     font-size: 28px;
@@ -1905,6 +2063,8 @@ html {
     letter-spacing: 6px;
     display: inline-block;
     text-align: center;
+    color: var(--text-gold-dark);
+    border: 2px solid rgba(233, 177, 59, 0.3);
 }
 
 .form__bot-btn {
@@ -1915,16 +2075,18 @@ html {
     font-weight: 700;
     text-transform: uppercase;
     font-family: var(--font-family);
-    background-color: var(--primary-color-button);
+    background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
     color: var(--secondary-color);
-    border: 3px solid var(--primary-color-button);
+    border: 3px solid #2d8c66;
+    box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
     transition: var(--transition);
     font-size: 16px;
     box-sizing: border-box;
 }
 
 .form__bot-btn:hover {
-    border: 3px solid var(--primary-color-button);
-    background-color: transparent;
-    color: var(--primary-color-button);
+    background: transparent;
+    color: #2d8c66;
+    border-color: #2d8c66;
+    box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
 }
