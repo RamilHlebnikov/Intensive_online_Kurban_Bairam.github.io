@@ -364,7 +364,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: var(--transition);
-    fill: var(--secondary-color);
+    fill: #3da87a;
 }
 
 /* Иконка закрытия скрыта по умолчанию */
@@ -420,7 +420,6 @@ html {
     padding-top: 105px;
     background-color: transparent;
     position: relative;
-    z-index: 1;
 }
 
 .header__wrapper {
@@ -475,7 +474,6 @@ html {
     padding-top: 103px;
     background-color: transparent;
     position: relative;
-    z-index: 1;
 }
 
 .banner__mini--title {
@@ -941,7 +939,6 @@ html {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 50px;
-    color: var(--primary-alternaite-color);
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 46px;
@@ -1333,11 +1330,11 @@ html {
 }
 
 .accordion-item1 {
-    border-bottom: 3px solid var(--primary-color);
+    border-bottom: 3px solid rgba(26, 92, 65, 0.15);
 }
 
 .accordion-item {
-    border-bottom: 3px solid var(--primary-color);
+    border-bottom: 3px solid rgba(26, 92, 65, 0.15);
 }
 
 .accordion-toggle {
@@ -1618,6 +1615,7 @@ html {
     align-items: center;
     justify-content: center;
     background: transparent;
+    position: relative;
 }
 
 .form::before {
@@ -1896,13 +1894,14 @@ html {
     line-height: 1.4;
 }
 
-.bx.bxs-cookie {
-    font-size: 64px;
+.cookie-icon {
+    width: 115px;
+    height: 115px;
     cursor: pointer;
     transition: var(--transition);
 }
 
-.bx.bxs-cookie:hover {
+.cookie-icon:hover {
     transform: scale(1.1) rotate(10deg);
     filter: drop-shadow(0 0 10px rgba(233, 177, 59, 0.5));
 }

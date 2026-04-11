@@ -9,7 +9,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--primary-color);
+        background: var(--gradient-emerald);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,9 +32,9 @@
         transform: translateX(-50%);
         width: 64px;
         height: 96px;
-        background: linear-gradient(45deg, #2A1F40, #1A132D);
+        background: linear-gradient(45deg, #0a2f2a, #1a5c41);
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 -8px 16px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), inset 0 -10px 20px rgba(255, 255, 255, 0.08)
     }
 
     /* Крышка туши */
@@ -45,9 +45,9 @@
         transform: translateX(-50%);
         width: 48px;
         height: 20px;
-        background: linear-gradient(45deg, #A387C4, #8A63B5);
+        background: var(--gradient-gold);
         border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     }
 
     /* Щёточка */
@@ -64,7 +64,7 @@
     .brush-handle {
         width: 6px;
         height: 64px;
-        background: #000000;
+        background: #b87a1a;
         border-radius: 3px;
         position: relative;
     }
@@ -77,10 +77,10 @@
         transform: translateX(-50%);
         width: 20px;
         height: 24px;
-        background: linear-gradient(to bottom, var(--secondary-color), #f0f0f0);
+        background: linear-gradient(to bottom, #fef0c0, #e9b13b);
         border-radius: 50% 50% 0 0;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     }
 
     /* Ворсинки щёточки */
@@ -91,7 +91,7 @@
         transform: translateX(-50%);
         width: 16px;
         height: 12px;
-        background: var(--secondary-color);
+        background: var(--text-light-gold);
         border-radius: 50% 50% 0 0;
     }
 
@@ -134,7 +134,7 @@
         position: absolute;
         width: 6px;
         height: 10px;
-        background: #A387C4;
+        background: #e9b13b;
         border-radius: 50%;
         opacity: 0;
     }
@@ -179,7 +179,8 @@
         bottom: -40px;
         left: 50%;
         transform: translateX(-50%);
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
+        text-shadow: 0 0 8px rgba(233, 177, 59, 0.5);
         font-size: 14px;
         opacity: 0;
         animation: textAppearMobile 2s ease-in-out 1s forwards;
@@ -221,6 +222,8 @@
     /* Шапка */
     .header {
         padding-top: 89px;
+        background-color: transparent;
+        position: relative;
     }
 
     .container {
@@ -242,11 +245,19 @@
         font-weight: 700;
         font-size: 12px;
         line-height: 19px;
-        color: var(--secondary-color);
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         text-transform: uppercase;
         cursor: pointer;
         transition: var(--transition);
         text-decoration: none;
+    }
+
+    .logo:hover {
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     }
 
     /* Бургер меню */
@@ -271,7 +282,9 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: var(--primary-color);
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+        background-size: cover;
+        background-repeat: no-repeat;
         z-index: 1000;
         padding: 100px 20px 20px;
     }
@@ -304,7 +317,7 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--secondary-color);
+        color: #2d8c66;
         text-transform: uppercase;
         text-decoration: none;
         padding: 15px 0;
@@ -314,14 +327,40 @@
     }
     
     .nav__item:hover {
-        color: var(--primary-color-button);
-        background-color: rgba(163, 135, 196, 0.1);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     }
 
     /* Главный экран */
     .banner {
         text-align: center;
         padding-top: 60px;
+        background-color: transparent;
+        position: relative;
+    }
+
+    .background-image {
+        display: none !important;
+    }
+
+    .header::before,
+    .header::after,
+    .banner::after {
+        content: none !important;
+    }
+
+    .banner::before {
+        content: '';
+        position: absolute;
+        top: -131px;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 128px);
+        z-index: -1;
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .banner__title {
@@ -329,7 +368,11 @@
         font-weight: 700;
         font-size: 25px;
         line-height: 40px;
-        color: var(--secondary-color);
+        background: linear-gradient(180deg, #fff3b0 0%, #f5d77a 25%, #e0b84f 50%, #c88f2a 75%, #a86f1f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 1px 0 #fff3b0, 0 2px 0 #e0b84f, 0 3px 0 #c88f2a, 0 4px 6px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.5));
         margin-bottom: 27px;
         text-transform: uppercase;
         text-align: center !important;
@@ -343,7 +386,9 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--secondary-color);
+        color: #B07A2A;
+        text-shadow: 0 1px 0 #e6c27a, 0 2px 4px rgba(0, 0, 0, 0.25);
+        -webkit-text-stroke: 0.5px #000000;
         margin-bottom: 27px;
         text-transform: uppercase;
         text-align: center !important;
@@ -358,7 +403,7 @@
         font-weight: 700;
         font-size: 19px;
         line-height: 150%;
-        color: var(--secondary-color);
+        color: #000000;
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 27px;
@@ -383,23 +428,23 @@
         width: 100%;
         max-width: 300px;
 
-        background-color: var(--primary-color-button);
+        background: linear-gradient(180deg, #E29A2A 0%, #C77B1A 60%, #A86412 100%);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         border-radius: var(--border-radius);
         font-family: var(--font-family);
         font-weight: 700;
         color: var(--secondary-color);
         text-transform: uppercase;
         transition: var(--transition);
-        border: 3px solid var(--primary-color-button);
+        border: 3px solid #A86412;
     }
 
     .button:hover {
-        border: 3px solid var(--primary-color-button);
-        background-color: transparent;
-        color: var(--secondary-color);
-        box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
-}
+        border: 3px solid #A86412;
+        background: transparent;
+        color: #000000;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px rgba(0,0,0,0.25);
+    }
 
     .btn {
         text-align: center;
@@ -409,20 +454,21 @@
         max-width: 300px;
 
         border-radius: var(--border-radius);
-        background-color: transparent;
-        color: var(--secondary-color);
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        color: #ffffff;
         font-weight: 700;
         font-family: var(--font-family);
-        border: 3px solid var(--primary-color-button);
+        border: 3px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         text-transform: uppercase;
         transition: var(--transition);
     }
 
     .btn:hover {
-        background-color: var(--primary-color-button);
-        color: var(--secondary-color);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        background: transparent;
+        color: #2d8c66;
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
 
     .images {
@@ -432,11 +478,8 @@
         top: -120px;
         left: auto;
         right: 0;
-        transform: none !important;
-    }
-
-    .bg-effect {
-        display: none;
+        filter: drop-shadow(0 20px 30px rgba(233, 177, 59, 0.4));
+        cursor: pointer;
     }
 
     /* Для кого */
@@ -454,7 +497,11 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        color: var(--primary-alternaite-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 30px;
         width: 100%;
@@ -479,8 +526,9 @@
     }
 
     .for-whom__card {
-        background: var(--background-color-card);
-        border: 3px solid var(--primary-color);
+        background: var(--gradient-card);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         display: flex;
         align-items: center;
@@ -490,16 +538,30 @@
         padding: 20px 15px 20px 45px;
         position: relative;
         margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .for-whom__card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
     }
 
     .for-whom__images {
         width: 50px;
         height: 50px;
         position: absolute;
-        left: -25px;
+        left: -26px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        cursor: pointer;
+    }
+
+    .for-whom__images {
+        transform: translateY(-50%) scale(1.1);
+        filter: drop-shadow(0 6px 12px rgba(233, 177, 59, 0.5));
     }
 
     .for-whom__desc {
@@ -507,7 +569,7 @@
         font-weight: 500;
         font-size: 12px;
         line-height: 1.4;
-        color: var(--primary-color);
+        color: var(--text-dark);
         text-transform: uppercase;
         margin: 0;
         padding-left: 0;
@@ -516,7 +578,7 @@
 
     .for-whom__span {
         font-weight: 700;
-        color: var(--primary-color);
+        color: var(--text-gold-dark);
     }
 
     .for-whom__content--items {
@@ -536,7 +598,8 @@
         font-size: 15px;
         line-height: 1.4;
         text-align: center;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         width: 100%;
         max-width: 280px;
         text-transform: uppercase;
@@ -544,13 +607,13 @@
     }
 
     .button__for-whom {
-        background-color: var(--primary-color-button);
+        background: var(--gradient-gold);
         border-radius: var(--border-radius);
         padding: 20px 65px;
         font-family: var(--font-family);
         font-size: 16px;
         font-weight: 700;
-        color: var(--secondary-color);
+        color: var(--primary-color);
         text-transform: uppercase;
         border: 3px solid var(--primary-color-button);
         text-align: center;
@@ -559,10 +622,7 @@
     }
 
     .button__for-whom:hover {
-        background-color: transparent;
-        color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        box-shadow: 0 15px 35px rgba(233, 177, 59, 0.5);
     }
 
     .super__woman--images {
@@ -572,6 +632,7 @@
         margin: 20px auto 0;
         position: relative;
         top: 0;
+        filter: drop-shadow(0 15px 30px rgba(233, 177, 59, 0.4));
     }
 
     /* Что будет на интенсиве? */
@@ -586,7 +647,11 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         width: 319px;
     }
 
@@ -602,12 +667,32 @@
         align-items: center;
         gap: 9px;
         min-width: 0;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: var(--border-radius);
+        padding: 20px 15px;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(233, 177, 59, 0.2);
+        cursor: pointer;
+    }
+
+    .program__content--list:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        background: rgba(233, 177, 59, 0.15);
+        box-shadow: var(--shadow-gold);
     }
 
     .program__images {
         width: 46px;
         height: 46px;
-        transform: none !important;
+        cursor: pointer;
+        transition: var(--transition);
+        filter: drop-shadow(0 0 15px rgba(233, 177, 59, 0.9));
+    }
+
+    .program__images:hover {
+        transform: scale(1.1);
     }
 
     .program__desc {
@@ -629,7 +714,11 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         width: 314px;
     }
@@ -671,7 +760,10 @@
         font-weight: 700;
         font-size: 30px;
         line-height: 36px;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
     }
 
     .indicator_text {
@@ -680,12 +772,13 @@
         font-weight: 500;
         font-size: 13px;
         line-height: 130%;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
     }
 
     .about__text--footer {
         width: 304px;
         margin-bottom: 41px;
+        color: var(--text-light-gold);
     }
 
     .about__main--images {
@@ -698,6 +791,14 @@
         top: -165px;
         margin-bottom: -30px;
         border-radius: var(--border-radius);
+        box-shadow: var(--shadow-gold);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+    }
+
+    .about__main--images:hover {
+        transform: scale(1.02);
+        border-color: var(--text-gold);
+        box-shadow: 0 20px 40px rgba(233, 177, 59, 0.4);
     }
 
     /* Лист уроков интенсива */
@@ -714,11 +815,15 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        color: var(--primary-alternaite-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
     }
 
     .accordion-item1 {
-        border-bottom: 3px solid var(--primary-color);
+        border-bottom: 3px solid rgba(26, 92, 65, 0.15);
     }
 
     .accordion {
@@ -727,7 +832,7 @@
     }
 
     .accordion-item {
-        border-bottom: 3px solid var(--primary-color);
+        border-bottom: 3px solid rgba(26, 92, 65, 0.15);
     }
 
     .accordion-toggle {
@@ -758,6 +863,10 @@
         text-transform: uppercase;
     }
 
+    .accordion-label:hover .lesson-title {
+        color: var(--text-gold-dark);
+    }
+
     .icon {
         position: relative;
         width: 20px;
@@ -769,7 +878,7 @@
     .icon::before, .icon::after {
         content: '';
         position: absolute;
-        background-color: var(--primary-color);
+        background-color: var(--text-gold-dark);
         transition: var(--transition);
     }
 
@@ -809,7 +918,7 @@
         background-color: transparent !important;
         font-size: 15px;
         line-height: 1.6;
-        color: var(--primary-color);
+        color: var(--text-muted);
     }
 
     /* Когда аккордеон открыт */
@@ -837,12 +946,22 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 150%;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         width: 350px;
     }
 
     .lesson--title--number {
         font-weight: 700;
+        color: var(--text-gold);
+    }
+
+    /* При наведении на весь блок .accordion-label меняется текст */
+    .accordion-label:hover .lesson--title--number {
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
+        text-shadow: none;
+        animation: titleGlow 2s ease-in-out infinite alternate;
     }
 
     .list__lessons__content--items {
@@ -871,7 +990,7 @@
 
     /* Тарифы участия */
     .pricing {
-        background-color: var(--primary-color);
+        background: var(--gradient-emerald);
         padding-top: 91px;
         overflow-x: hidden;
     }
@@ -885,7 +1004,11 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-top: 0;
     }
@@ -900,13 +1023,21 @@
     }
 
     .pricing__content--card {
-        background-color: var(--background-color-card);
+        background: var(--gradient-card);
+        border: 2px solid rgba(233, 177, 59, 0.2);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         width: 300px;
         padding: 57px 30px 0 36px;
         position: relative;
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    .pricing__content--card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
     }
 
     .pricing__content__card--title {
@@ -955,8 +1086,7 @@
         position: absolute;
         top: -30px;
         left: 240px;
-        object-fit: cover;
-        transform: none !important;
+        object-fit: contain;
     }
 
     .pricing__content--stories {
@@ -965,10 +1095,6 @@
         justify-content: center;
         align-items: center;
         gap: 25px;
-    }
-
-    .pricing__content__images--gift {
-        transform: none !important;
     }
 
     .pricing__content__stories--text {
@@ -1007,6 +1133,11 @@
         transition: var(--transition);
     }
 
+    .short__name:hover {
+        color: var(--text-gold);
+        text-shadow: var(--glow-gold);
+    }
+
     /* А такие вопросы могут быть у вас */
     .questions {
         padding-top: 95px;
@@ -1020,6 +1151,11 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
     }
 
     .for-whom__content--items {
@@ -1046,7 +1182,7 @@
     .footer {
         padding-top: 125px;
         padding-bottom: 280px;
-        background-color: var(--background-color-footer);
+        background: var(--gradient-emerald);
         width: 100%;
         position: relative;
     }
@@ -1086,14 +1222,28 @@
         padding-top: 45px;
         padding-bottom: 45px;
         box-sizing: border-box;
+        background: transparent;
+        position: relative;
+    }
+
+    .form::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternative.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
     }
 
     .form__container {
         width: 100%;
         padding: 20px;
-        background: var(--background-color-card);
+        background: var(--gradient-card);
         border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(233, 177, 59, 0.3);
+        box-shadow: var(--shadow-gold);
     }
 
     .form__tabs--recording {
@@ -1109,7 +1259,7 @@
         text-align: center;
         padding: 0 10px;
         font-weight: 700;
-        color: var(--background-color-footer);
+        color: var(--text-gold-dark);
     }
 
     .form__container--group {
@@ -1131,7 +1281,8 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 14px;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         text-transform: uppercase;
     }
 
@@ -1153,7 +1304,7 @@
     }
 
     .form__field:focus-within {
-        border-color: var(--primary-color-button);
+        border-color: var(--text-gold);
     }
 
     .remembers__me {
@@ -1163,7 +1314,7 @@
         cursor: pointer;
         font-family: var(--font-family);
         font-size: 12px;
-        color: var(--primary-color);
+        color: var(--text-dark);
         margin-top: 15px;
         line-height: 1.4;
         text-align: left;
@@ -1182,8 +1333,9 @@
         padding: 18px 30px;
         font-size: 14px;
         margin-top: 25px;
-        background-color: var(--primary-color-button);
-        border: 2px solid var(--primary-color-button);
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        border: 2px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         border-radius: 25px;
         font-weight: 700;
         color: var(--secondary-color);
@@ -1193,10 +1345,10 @@
     }
 
     .btn__pre--recording:hover {
-        background-color: transparent;
-        color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        background: transparent;
+        color: #2d8c66;
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
 
     /* Файлы Cookie */
@@ -1207,11 +1359,11 @@
         transform: translateX(-50%);
         width: calc(100% - 40px);
         max-width: 310px;
-        background: var(--primary-color);
-        border: 2px solid var(--secondary-color);
+        background: var(--gradient-emerald);
+        border: 2px solid rgba(233, 177, 59, 0.4);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
         border-radius: 20px;
         padding: 15px;
-        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
         z-index: 10000;
         opacity: 0;
         transform: translateX(-50%) translateY(100px);
@@ -1238,19 +1390,18 @@
         font-family: var(--font-family);
         font-weight: 500;
         font-size: 14px;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         line-height: 1.4;
         order: 2;
     }
 
-    .bx.bxs-cookie {
-        font-size: 48px;
+    .cookie-icon {
+        width: 80px;
         cursor: pointer;
-        transform: none !important;
         order: 1;
     }
 
-    .bx.bxs-cookie:hover {
+    .cookie-icon:hover {
         transform: scale(1.1) rotate(10deg);
     }
 
@@ -1269,66 +1420,42 @@
         max-width: 200px;
         padding: 12px 20px;
         font-size: 14px;
-        border: 2px solid var(--primary-color-button);
     }
 
     .cookie__accept {
-        background-color: var(--primary-color-button);
+        color: #000000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        border: 3px solid #A86412;
+        background: linear-gradient(180deg, #E29A2A 0%, #C77B1A 60%, #A86412 100%);
         order: 1;
     }
 
+    .cookie__accept:hover {
+        border: 3px solid #A86412;
+        background: transparent;
+        color: var(--secondary-color);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px rgba(0,0,0,0.25);
+    }
+
     .cookie__decline {
-        background-color: transparent;
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        color: var(--secondary-color);
+        border: 3px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         order: 2;
     }
 
-    .cookie__accept:hover {
-        border: 2px solid var(--primary-color-button);
-        background-color: transparent;
-    }
-
     .cookie__decline:hover {
-        background-color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
+        background: transparent;
+        color: var(--secondary-color);
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
 
     /* Контейнер внутри cookie */
     .cookie__notifications .container {
         max-width: 100%;
         padding: 0;
-    }
-
-    /* КНОПКА ДОКУМЕНТАЦИИ */
-    .doc_toggle--btn {
-        width: 45px;
-        height: 45px;
-        top: 30px;
-        right: 39px;
-        background: rgba(30, 30, 40, 0.95);
-        border-radius: var(--border-radius);
-        border: 2px solid rgba(255, 255, 255, 0.15);
-        cursor: pointer;
-        z-index: 10001;
-    
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        animation: showDocButton 0.5s ease-in-out 4.5s forwards;
-    }
-
-    .doc_toggle--btn i {
-        font-size: 24px;
-        color: #888888;
-        transition: var(--transition);
-    }
-    
-    .doc_toggle--btn:hover i {
-        color: var(--primary-color-button);
     }
 }
 
@@ -1342,7 +1469,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: var(--primary-color);
+        background: var(--gradient-emerald);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1365,9 +1492,9 @@
         transform: translateX(-50%);
         width: 50px;
         height: 80px;
-        background: linear-gradient(45deg, #2A1F40, #1A132D);
+        background: linear-gradient(45deg, #0a2f2a, #1a5c41);
         border-radius: 6px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3), inset 0 -6px 12px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), inset 0 -10px 20px rgba(255, 255, 255, 0.08)
     }
 
     /* Крышка туши */
@@ -1378,9 +1505,9 @@
         transform: translateX(-50%);
         width: 40px;
         height: 16px;
-        background: linear-gradient(45deg, #A387C4, #8A63B5);
+        background: var(--gradient-gold);
         border-radius: 3px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     }
 
     /* Щёточка */
@@ -1397,7 +1524,7 @@
     .brush-handle {
         width: 5px;
         height: 50px;
-        background: #000000;
+        background: #b87a1a;
         border-radius: 2px;
         position: relative;
     }
@@ -1410,10 +1537,10 @@
         transform: translateX(-50%);
         width: 16px;
         height: 20px;
-        background: linear-gradient(to bottom, var(--secondary-color), #f0f0f0);
+        background: linear-gradient(to bottom, #fef0c0, #e9b13b);
         border-radius: 50% 50% 0 0;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     }
 
     /* Ворсинки щёточки */
@@ -1424,7 +1551,7 @@
         transform: translateX(-50%);
         width: 14px;
         height: 10px;
-        background: var(--secondary-color);
+        background: var(--text-light-gold);
         border-radius: 50% 50% 0 0;
     }
 
@@ -1467,7 +1594,7 @@
         position: absolute;
         width: 5px;
         height: 8px;
-        background: #A387C4;
+        background: #e9b13b;
         border-radius: 50%;
         opacity: 0;
     }
@@ -1512,7 +1639,8 @@
         bottom: -35px;
         left: 50%;
         transform: translateX(-50%);
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
+        text-shadow: 0 0 8px rgba(233, 177, 59, 0.5);
         font-size: 12px;
         opacity: 0;
         animation: textAppearTablet 2s ease-in-out 1s forwards;
@@ -1544,6 +1672,8 @@
     .header {
         display: block !important;
         padding-top: 85px;
+        position: relative;
+        background-color: transparent;
     }
 
     body {
@@ -1601,7 +1731,9 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: var(--primary-color);
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+        background-size: cover;
+        background-repeat: no-repeat;
         z-index: 1000;
         padding: 80px 25px 25px;
         overflow-y: auto;
@@ -1639,21 +1771,47 @@
         border-bottom: 1px solid var(--primary-color-button);
         font-family: var(--font-family);
         font-weight: 700;
-        color: var(--secondary-color);
+        color: #2d8c66;
         text-transform: uppercase;
         transition: var(--transition);
         text-decoration: none;
     }
     
     .nav__item:hover {
-        color: var(--primary-color-button);
-        background-color: rgba(163, 135, 196, 0.1);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     }
 
     /* Главный экран */
     .banner {
         text-align: center;
         padding-top: 80px;
+        position: relative;
+        background-color: transparent;
+    }
+
+    .background-image {
+        display: none !important;
+    }
+
+    .header::before,
+    .header::after,
+    .banner::after {
+        content: none !important;
+    }
+
+    .banner::before {
+        content: '';
+        position: absolute;
+        top: -131px;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 128px);
+        z-index: -1;
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .banner__title {
@@ -1661,7 +1819,11 @@
         font-weight: 700;
         font-size: 30px;
         line-height: 48px;
-        color: var(--secondary-color);
+        background: linear-gradient(180deg, #fff3b0 0%, #f5d77a 25%, #e0b84f 50%, #c88f2a 75%, #a86f1f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 1px 0 #fff3b0, 0 2px 0 #e0b84f, 0 3px 0 #c88f2a, 0 4px 6px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.5));
         margin-bottom: 30px;
         text-transform: uppercase;
         text-align: center;
@@ -1672,7 +1834,9 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 20px;
-        color: var(--secondary-color);
+        color: #B07A2A;
+        text-shadow: 0 1px 0 #e6c27a, 0 2px 4px rgba(0, 0, 0, 0.25);
+        -webkit-text-stroke: 0.5px #000000;
         margin-bottom: 30px;
         text-transform: uppercase;
         text-align: center !important;
@@ -1684,7 +1848,7 @@
         font-weight: 700;
         font-size: 24px;
         line-height: 150%;
-        color: var(--secondary-color);
+        color: #000000;
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 30px;
@@ -1709,23 +1873,23 @@
         font-size: 18px;
         width: 100%;
         max-width: 350px;
-        background-color: var(--primary-color-button);
+        background: linear-gradient(180deg, #E29A2A 0%, #C77B1A 60%, #A86412 100%);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         border-radius: var(--border-radius);
         font-family: var(--font-family);
         font-weight: 700;
         color: var(--secondary-color);
         text-transform: uppercase;
         transition: var(--transition);
-        border: 3px solid var(--primary-color-button);
+        border: 3px solid #A86412;
         cursor: pointer;
     }
 
     .button:hover {
-        border: 3px solid var(--primary-color-button);
-        background-color: transparent;
-        color: var(--secondary-color);
-        box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+        border: 3px solid #A86412;
+        background: transparent;
+        color: #000000;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px rgba(0,0,0,0.25);
     }
 
     .btn {
@@ -1735,21 +1899,22 @@
         width: 100%;
         max-width: 350px;
         border-radius: var(--border-radius);
-        background-color: transparent;
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
         color: var(--secondary-color);
         font-weight: 700;
         font-family: var(--font-family);
-        border: 3px solid var(--primary-color-button);
+        border: 3px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         text-transform: uppercase;
         transition: var(--transition);
         cursor: pointer;
     }
 
     .btn:hover {
-        background-color: var(--primary-color-button);
-        color: var(--secondary-color);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        background: transparent;
+        color: #2d8c66;
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
 
     .images {
@@ -1759,11 +1924,6 @@
         top: -150px;
         left: auto;
         right: 0;
-        transform: none !important;
-    }
-
-    .bg-effect {
-        display: none !important;
     }
 
     /* Для кого */
@@ -1778,7 +1938,11 @@
         line-height: 1.3;
         text-align: center !important;
         width: 100% !important;
-        color: var(--primary-alternaite-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 40px;
     }
@@ -1801,8 +1965,9 @@
     }
 
     .for-whom__card {
-        background: var(--background-color-card);
-        border: 3px solid var(--primary-color);
+        background: var(--gradient-card);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         display: flex;
         align-items: center;
@@ -1812,16 +1977,30 @@
         padding: 25px 20px 25px 60px;
         position: relative;
         margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .for-whom__card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
     }
 
     .for-whom__images {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         position: absolute;
-        left: -35px;
+        left: -26px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        cursor: pointer;
+    }
+
+    .for-whom__images {
+        transform: translateY(-50%) scale(1.1);
+        filter: drop-shadow(0 6px 12px rgba(233, 177, 59, 0.5));
     }
 
     .for-whom__desc {
@@ -1829,7 +2008,7 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 1.4;
-        color: var(--primary-color);
+        color: var(--text-dark);
         text-transform: uppercase;
         margin: 0;
         padding-left: 0;
@@ -1838,7 +2017,7 @@
 
     .for-whom__span {
         font-weight: 700;
-        color: var(--primary-color);
+        color: var(--text-gold-dark);
     }
 
     .for-whom__content--items {
@@ -1858,7 +2037,8 @@
         font-size: 19px;
         line-height: 1.4;
         text-align: center;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         width: 100%;
         max-width: 400px;
         text-transform: uppercase;
@@ -1866,13 +2046,13 @@
     }
 
     .button__for-whom {
-        background-color: var(--primary-color-button);
+        background: var(--gradient-gold);
         border-radius: var(--border-radius);
         padding: 20px 70px;
         font-family: var(--font-family);
         font-size: 18px;
         font-weight: 700;
-        color: var(--secondary-color);
+        color: var(--primary-color);
         text-transform: uppercase;
         border: 3px solid var(--primary-color-button);
         text-align: center;
@@ -1881,10 +2061,7 @@
     }
 
     .button__for-whom:hover {
-        background-color: transparent;
-        color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        box-shadow: 0 15px 35px rgba(233, 177, 59, 0.5);
     }
 
     .super__woman--images {
@@ -1894,6 +2071,7 @@
         margin: 30px auto 0;
         position: relative;
         top: 0;
+        filter: drop-shadow(0 15px 30px rgba(233, 177, 59, 0.4));
     }
 
     /* Что будет на интенсиве? */
@@ -1909,7 +2087,11 @@
         font-size: 36px;
         text-align: center !important;
         width: 100% !important;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
     }
 
@@ -1925,13 +2107,33 @@
         align-items: center;
         gap: 9px;
         min-width: 0;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: var(--border-radius);
+        padding: 20px 15px;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(233, 177, 59, 0.2);
+        cursor: pointer;
+    }
+
+    .program__content--list:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        background: rgba(233, 177, 59, 0.15);
+        box-shadow: var(--shadow-gold);
     }
 
     .program__images {
         width: 60px;
         height: 60px;
-        transform: none !important;
         flex-shrink: 0;
+        cursor: pointer;
+        transition: var(--transition);
+        filter: drop-shadow(0 0 15px rgba(233, 177, 59, 0.9));
+    }
+
+    .program__images:hover {
+        transform: scale(1.1);
     }
 
     .program__desc {
@@ -1960,7 +2162,11 @@
         font-size: 36px;
         text-align: center;
         width: 100%;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 40px;
     }
@@ -1972,7 +2178,6 @@
         font-family: var(--font-family);
         font-size: 18px;
         line-height: 1.6;
-        color: var(--secondary-color);
         text-align: center;
     }
 
@@ -1983,7 +2188,6 @@
         font-family: var(--font-family);
         font-size: 18px;
         line-height: 1.6;
-        color: var(--secondary-color);
         text-align: center;
     }
 
@@ -2014,7 +2218,10 @@
         font-weight: 700;
         font-size: 37px;
         line-height: 36px;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         text-align: center;
     }
 
@@ -2024,7 +2231,7 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 130%;
-        color: var(--secondary-color);
+        olor: var(--text-light-gold);
         text-align: center;
     }
 
@@ -2035,7 +2242,7 @@
         font-family: var(--font-family);
         font-size: 18px;
         line-height: 1.6;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-align: center;
     }
 
@@ -2050,6 +2257,14 @@
         top: -150px;
         margin-bottom: 50px;
         border-radius: var(--border-radius);
+        box-shadow: var(--shadow-gold);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+    }
+
+    .about__main--images:hover {
+        transform: scale(1.02);
+        border-color: var(--text-gold);
+        box-shadow: 0 20px 40px rgba(233, 177, 59, 0.4);
     }
 
     /* Лист уроков интенсива */
@@ -2066,12 +2281,16 @@
         line-height: 150%;
         text-align: center;
         width: 100%;
-        color: var(--primary-alternaite-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         margin-bottom: 40px;
     }
 
     .accordion-item1 {
-        border-bottom: 3px solid var(--primary-color);
+        border-bottom: 3px solid rgba(26, 92, 65, 0.15);
     }
 
     .accordion {
@@ -2082,7 +2301,7 @@
     }
 
     .accordion-item {
-        border-bottom: 3px solid var(--primary-color);
+        border-bottom: 3px solid rgba(26, 92, 65, 0.15);
     }
 
     .accordion-toggle {
@@ -2112,6 +2331,10 @@
         padding-right: 20px;
     }
 
+    .accordion-label:hover .lesson-title {
+        color: var(--text-gold-dark);
+    }
+
     .icon {
         position: relative;
         width: 24px;
@@ -2123,7 +2346,7 @@
     .icon::before, .icon::after {
         content: '';
         position: absolute;
-        background-color: var(--primary-color);
+        background-color: var(--text-gold-dark);
         transition: var(--transition);
     }
 
@@ -2163,7 +2386,7 @@
         background-color: transparent !important;
         font-size: 16px;
         line-height: 1.6;
-        color: var(--primary-color);
+        color: var(--text-muted);
     }
 
     /* Когда аккордеон открыт */
@@ -2193,7 +2416,8 @@
         font-weight: 700;
         font-size: 22px;
         line-height: 150%;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         text-align: center;
         width: 100%;
         max-width: 500px;
@@ -2202,6 +2426,15 @@
 
     .lesson--title--number {
         font-weight: 700;
+        color: var(--text-gold);
+    }
+
+    /* При наведении на весь блок .accordion-label меняется текст */
+    .accordion-label:hover .lesson--title--number {
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
+        text-shadow: none;
+        animation: titleGlow 2s ease-in-out infinite alternate;
     }
 
     .list__lessons__content--items img {
@@ -2213,7 +2446,7 @@
 
     /* Тарифы участия */
     .pricing {
-        background-color: var(--primary-color);
+        background: var(--gradient-emerald);
         padding-top: 91px;
         overflow-x: hidden;
     }
@@ -2227,7 +2460,11 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-top: 0;
     }
@@ -2242,13 +2479,21 @@
     }
 
     .pricing__content--card {
-        background-color: var(--background-color-card);
+        background: var(--gradient-card);
+        border: 2px solid rgba(233, 177, 59, 0.2);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         width: 300px;
         padding: 57px 30px 0 36px;
         position: relative;
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    .pricing__content--card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
     }
 
     .pricing__content__card--title {
@@ -2297,8 +2542,7 @@
         position: absolute;
         top: -30px;
         left: 240px;
-        object-fit: cover;
-        transform: none !important;
+        object-fit: contain;
     }
 
     .pricing__content--stories {
@@ -2307,10 +2551,6 @@
         justify-content: center;
         align-items: center;
         gap: 25px;
-    }
-
-    .pricing__content__images--gift {
-        transform: none !important;
     }
 
     .pricing__content__stories--text {
@@ -2350,6 +2590,11 @@
         transition: var(--transition);
     }
 
+    .short__name:hover {
+        color: var(--text-gold);
+        text-shadow: var(--glow-gold);
+    }
+
     /* А такие вопросы могут быть у вас */
     .questions {
         display: block !important;
@@ -2362,7 +2607,11 @@
         font-size: 36px;
         text-align: center;
         width: 100%;
-        color: var(--primary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 50px;
     }
@@ -2389,7 +2638,6 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 1.5;
-        color: var(--primary-color);
         text-transform: uppercase;
     }
 
@@ -2398,7 +2646,7 @@
         display: block !important;
         padding-top: 150px;
         padding-bottom: 320px;
-        background-color: var(--background-color-footer);
+        background: var(--gradient-emerald);
         width: 100%;
         position: relative;
     }
@@ -2441,14 +2689,28 @@
         padding-top: 60px;
         padding-bottom: 60px;
         box-sizing: border-box;
+        background: transparent;
+        position: relative;
+    }
+
+    .form::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternative.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
     }
 
     .form__container {
         width: 100%;
         padding: 30px;
-        background: var(--background-color-card);
+        background: var(--gradient-card);
         border-radius: 20px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(233, 177, 59, 0.3);
+        box-shadow: var(--shadow-gold);
     }
 
     .form__tabs--recording {
@@ -2464,7 +2726,7 @@
         text-align: center;
         padding: 0 20px;
         font-weight: 700;
-        color: var(--background-color-footer);
+        color: var(--text-gold-dark);
     }
 
     .form__container--group {
@@ -2486,7 +2748,8 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         text-transform: uppercase;
     }
 
@@ -2508,7 +2771,7 @@
     }
 
     .form__field:focus-within {
-        border-color: var(--primary-color-button);
+        border-color: var(--text-gold);
     }
 
     .remembers__me {
@@ -2518,7 +2781,7 @@
         cursor: pointer;
         font-family: var(--font-family);
         font-size: 14px;
-        color: var(--primary-color);
+        color: var(--text-dark);
         margin-top: 20px;
         line-height: 1.5;
         text-align: left;
@@ -2537,8 +2800,9 @@
         padding: 22px 40px;
         font-size: 16px;
         margin-top: 30px;
-        background-color: var(--primary-color-button);
-        border: 2px solid var(--primary-color-button);
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        border: 2px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         border-radius: 25px;
         font-weight: 700;
         color: var(--secondary-color);
@@ -2548,10 +2812,10 @@
     }
 
     .btn__pre--recording:hover {
-        background-color: transparent;
-        color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        background: transparent;
+        color: #2d8c66;
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
 
     /* Файлы Cookie */
@@ -2562,7 +2826,9 @@
         max-width: 600px;
         padding: 20px;
         border-radius: 24px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        background: var(--gradient-emerald);
+        border: 2px solid rgba(233, 177, 59, 0.4);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
     }
 
     .cookie__text {
@@ -2570,9 +2836,8 @@
         line-height: 1.5;
     }
 
-    .bx.bxs-cookie {
-        font-size: 50px;
-        transform: none !important;
+    .cookie-icon {
+        font-size: 150px;
     }
 
     .cookie__container--label {
@@ -2594,39 +2859,6 @@
     }
     .cookie__container--label {
         order: 2;
-    }
-
-    /* КНОПКА ДОКУМЕНТАЦИИ */
-    .doc_toggle--btn {
-        width: 50px;
-        height: 50px;
-        top: 25px;
-        right: 53px;
-        background: rgba(30, 30, 40, 0.95);
-        border-radius: var(--border-radius);
-        border: 2px solid rgba(255, 255, 255, 0.15);
-        cursor: pointer;
-        z-index: 10001;
-    
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        animation: showDocButton 0.5s ease-in-out 4.5s forwards;
-    }
-    
-    .doc_toggle--btn i {
-        font-size: 27px;
-        color: #888888;
-        transition: var(--transition);
-    }
-    
-    .doc_toggle--btn:hover i {
-        color: var(--primary-color-button);
     }
 }
 
@@ -2673,7 +2905,8 @@
     /* Шапка */
     .header {
         padding-top: 80px;
-        background-color: var(--primary-color);
+        background-color: transparent;
+        position: relative;
     }
 
     .header__wrapper {
@@ -2687,15 +2920,18 @@
         font-weight: 700;
         font-size: 14px;
         line-height: 19px;
-        color: var(--secondary-color);
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         text-transform: uppercase;
         cursor: pointer;
         transition: var(--transition);
     }
 
     .logo:hover {
-        color: var(--primary-color-button);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     }
 
     .burger-menu {
@@ -2719,7 +2955,9 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: var(--primary-color);
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+        background-size: cover;
+        background-repeat: no-repeat;
         z-index: 1000;
         padding: 80px 25px 25px;
         overflow-y: auto;
@@ -2757,28 +2995,54 @@
         border-bottom: 1px solid var(--primary-color-button);
         font-family: var(--font-family);
         font-weight: 700;
-        color: var(--secondary-color);
+        color: #2d8c66;
         text-transform: uppercase;
         transition: var(--transition);
         text-decoration: none;
     }
     
     .nav__item:hover {
-        color: var(--primary-color-button);
-        background-color: rgba(163, 135, 196, 0.1);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     }
 
     /* Главный экран */
     .banner {
         padding-top: 100px;
-        background-color: var(--primary-color);
+        background-color: transparent;
+        position: relative;
+    }
+
+    .background-image {
+        display: none !important;
+    }
+
+    .header::before,
+    .header::after,
+    .banner::after {
+        content: none !important;
+    }
+
+    .banner::before {
+        content: '';
+        position: absolute;
+        top: -131px;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 128px);
+        z-index: -1;
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .banner__mini--title {
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 20px;
-        color: var(--secondary-color);
+        color: #B07A2A;
+        text-shadow: 0 1px 0 #e6c27a, 0 2px 4px rgba(0, 0, 0, 0.25);
         text-transform: uppercase;
     }
 
@@ -2788,7 +3052,11 @@
         font-size: 40px;
         line-height: 50px;
         max-width: 500px;
-        color: var(--secondary-color);
+        background: linear-gradient(180deg, #fff3b0 0%, #f5d77a 25%, #e0b84f 50%, #c88f2a 75%, #a86f1f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 1px 0 #fff3b0, 0 2px 0 #e0b84f, 0 3px 0 #c88f2a, 0 4px 6px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.5));
         text-transform: uppercase;
         margin-top: 15px;
     }
@@ -2798,7 +3066,7 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 150%;
-        color: var(--secondary-color);
+        color: #000000;
         margin-top: 15px;
         max-width: 430px;
         text-transform: uppercase;
@@ -2813,7 +3081,8 @@
     }
 
     .button {
-        background-color: var(--primary-color-button);
+        background: linear-gradient(180deg, #E29A2A 0%, #C77B1A 60%, #A86412 100%);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         border-radius: var(--border-radius);
         padding: 20px 65px;
         font-family: var(--font-family);
@@ -2822,37 +3091,37 @@
         color: var(--secondary-color);
         text-transform: uppercase;
         transition: var(--transition);
-        border: 3px solid var(--primary-color-button);
+        border: 3px solid #A86412;
         text-align: center;
     }
 
     .button:hover {
-        border: 3px solid var(--primary-color-button);
-        background-color: transparent;
-        color: var(--secondary-color);
-        box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+        border: 3px solid #A86412;
+        background: transparent;
+        color: #000000;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px rgba(0,0,0,0.25);
     }
 
     .btn {
         border-radius: var(--border-radius);
-        background-color: transparent;
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        border: 3px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         color: var(--secondary-color);
         padding: 20px 65px;
         font-weight: 700;
         font-family: var(--font-family);
         font-size: 16px;
-        border: 3px solid var(--primary-color-button);
         text-transform: uppercase;
         transition: var(--transition);
         text-align: center;
     }
 
     .btn:hover {
-        background-color: var(--primary-color-button);
-        color: var(--secondary-color);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        background: transparent;
+        color: #2d8c66;
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
     
     .images {
@@ -2862,13 +3131,9 @@
         top: -50px;
         width: 35%;
         z-index: 2;
-        transform: none !important;
+        filter: drop-shadow(0 20px 30px rgba(233, 177, 59, 0.4));
+        cursor: pointer;
     }
-
-    .bg-effect {
-        display: none;
-    }
-
     /* Для кого? */
     .for-whom {
         padding-top: 100px;
@@ -2898,8 +3163,9 @@
     }
 
     .for-whom__card {
-        background: var(--background-color-card);
-        border: 3px solid var(--primary-color);
+        background: var(--gradient-card);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         display: flex;
         align-items: center;
@@ -2909,16 +3175,30 @@
         padding: 20px 15px 20px 50px;
         position: relative;
         margin: 0;
+        cursor: pointer;
+    }
+
+    .for-whom__card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
     }
 
     .for-whom__images {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         position: absolute;
-        left: -30px;
+        left: -26px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        cursor: pointer;
+    }
+
+    .for-whom__images {
+        transform: translateY(-50%) scale(1.1);
+        filter: drop-shadow(0 6px 12px rgba(233, 177, 59, 0.5));
     }
 
     .for-whom__desc {
@@ -2926,7 +3206,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 1.4;
-        color: var(--primary-color);
+        color: var(--text-dark);
         text-transform: uppercase;
         margin: 0;
         padding-left: 0;
@@ -2935,7 +3215,7 @@
 
     .for-whom__span {
         font-weight: 700;
-        color: var(--primary-color);
+        color: var(--text-gold-dark);
     }
 
     .for-whom__content--items {
@@ -2955,7 +3235,8 @@
         font-size: 18px;
         line-height: 1.4;
         text-align: center;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         width: 100%;
         max-width: 600px;
         text-transform: uppercase;
@@ -2963,13 +3244,13 @@
     }
 
     .button__for-whom {
-        background-color: var(--primary-color-button);
+        background: var(--gradient-gold);
         border-radius: var(--border-radius);
         padding: 20px 60px;
         font-family: var(--font-family);
         font-size: 16px;
         font-weight: 700;
-        color: var(--secondary-color);
+        color: var(--primary-color);
         text-transform: uppercase;
         border: 3px solid var(--primary-color-button);
         text-align: center;
@@ -2978,10 +3259,7 @@
     }
 
     .button__for-whom:hover {
-        background-color: transparent;
-        color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        box-shadow: 0 15px 35px rgba(233, 177, 59, 0.5);
     }
 
     .super__woman--images {
@@ -2991,6 +3269,7 @@
         margin: 25px auto 0;
         position: relative;
         top: 0;
+        filter: drop-shadow(0 15px 30px rgba(233, 177, 59, 0.4));
     }
 
     /* Что будет на интенсиве? */
@@ -3002,7 +3281,11 @@
         font-size: 36px;
         text-align: center;
         width: 100%;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
     }
 
@@ -3021,13 +3304,26 @@
         align-items: center;
         gap: 15px;
         min-width: 0;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: var(--border-radius);
+        padding: 20px 15px;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(233, 177, 59, 0.2);
+        cursor: pointer;
+    }
+
+    .program__content--list:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        background: rgba(233, 177, 59, 0.15);
+        box-shadow: var(--shadow-gold);
     }
 
     .program__images {
         width: 55px;
         height: 55px;
         flex-shrink: 0;
-        transform: none !important;
     }
 
     .program__desc {
@@ -3047,7 +3343,11 @@
         font-size: 36px;
         text-align: center;
         width: 100%;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 40px;
         margin-top: -50px;
@@ -3060,7 +3360,6 @@
         font-family: var(--font-family);
         font-size: 18px;
         line-height: 1.6;
-        color: var(--secondary-color);
         text-align: center;
     }
 
@@ -3071,7 +3370,6 @@
         font-family: var(--font-family);
         font-size: 18px;
         line-height: 1.6;
-        color: var(--secondary-color);
         text-align: center;
     }
 
@@ -3102,7 +3400,10 @@
         font-weight: 700;
         font-size: 39px;
         line-height: 36px;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         text-align: center;
     }
 
@@ -3112,7 +3413,7 @@
         font-weight: 500;
         font-size: 17px;
         line-height: 140%;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-align: center;
     }
 
@@ -3123,7 +3424,7 @@
         font-family: var(--font-family);
         font-size: 17px;
         line-height: 1.6;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-align: center;
     }
 
@@ -3138,6 +3439,14 @@
         top: -150px;
         margin-bottom: 50px;
         border-radius: var(--border-radius);
+        box-shadow: var(--shadow-gold);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+    }
+
+    .about__main--images:hover {
+        transform: scale(1.02);
+        border-color: var(--text-gold);
+        box-shadow: 0 20px 40px rgba(233, 177, 59, 0.4);
     }
 
     /* Лист уроков интенсива */
@@ -3150,7 +3459,11 @@
         line-height: 150%;
         text-align: center;
         width: 100%;
-        color: var(--primary-alternaite-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         margin-bottom: 40px;
     }
 
@@ -3162,7 +3475,7 @@
     }
 
     .accordion-item {
-        border-bottom: 3px solid var(--primary-color);
+        border-bottom: 3px solid rgba(26, 92, 65, 0.15);
     }
 
     .accordion-toggle {
@@ -3188,6 +3501,10 @@
         padding-right: 20px;
     }
 
+    .accordion-label:hover .lesson-title {
+        color: var(--text-gold-dark);
+    }
+
     .icon {
         position: relative;
         width: 22px;
@@ -3199,7 +3516,7 @@
     .icon::before, .icon::after {
         content: '';
         position: absolute;
-        background-color: var(--primary-color);
+        background-color: var(--text-gold-dark);
         transition: var(--transition);
     }
 
@@ -3236,7 +3553,7 @@
         background-color: transparent !important;
         font-size: 16px;
         line-height: 1.6;
-        color: var(--primary-color);
+        color: var(--text-muted);
     }
 
     .accordion-toggle:checked ~ .accordion-content {
@@ -3261,16 +3578,30 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 150%;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         text-align: center;
         width: 100%;
         max-width: 550px;
         order: -1;
     }
 
+    .lesson--title--number {
+        font-weight: 700;
+        color: var(--text-gold);
+    }
+
+    /* При наведении на весь блок .accordion-label меняется текст */
+    .accordion-label:hover .lesson--title--number {
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
+        text-shadow: none;
+        animation: titleGlow 2s ease-in-out infinite alternate;
+    }
+
     /* Тарифы участия */
     .pricing {
-        background-color: var(--primary-color);
+        background: var(--gradient-emerald);
         padding-top: 91px;
         overflow-x: hidden;
     }
@@ -3284,7 +3615,11 @@
         margin-right: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-top: 0;
     }
@@ -3299,13 +3634,21 @@
     }
 
     .pricing__content--card {
-        background-color: var(--background-color-card);
+        background: var(--gradient-card);
+        border: 2px solid rgba(233, 177, 59, 0.2);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         width: 300px;
         padding: 57px 30px 0 36px;
         position: relative;
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    .pricing__content--card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
     }
 
     .pricing__content__card--title {
@@ -3354,8 +3697,7 @@
         position: absolute;
         top: -30px;
         left: 240px;
-        object-fit: cover;
-        transform: none !important;
+        object-fit: contain;
     }
 
     .pricing__content--stories {
@@ -3366,14 +3708,9 @@
         gap: 25px;
     }
 
-    .pricing__content__images--gift {
-        transform: none !important;
-    }
-
     .pricing__content__stories--text {
         text-align: center;
         font-size: 18px;
-        color: var(--secondary-color);
         line-height: 1.6;
         width: 100%;
         max-width: 450px;
@@ -3407,6 +3744,11 @@
         transition: var(--transition);
     }
 
+    .short__name:hover {
+        color: var(--text-gold);
+        text-shadow: var(--glow-gold);
+    }
+
     /* А такие вопросы могут быть у вас */
     .questions__title {
         font-family: var(--font-family);
@@ -3414,7 +3756,11 @@
         font-size: 36px;
         text-align: center;
         width: 100%;
-        color: var(--primary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 40px;
         margin-top: -65px;
@@ -3442,7 +3788,6 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 1.5;
-        color: var(--primary-color);
         text-transform: uppercase;
     }
 
@@ -3450,7 +3795,7 @@
     .footer {
         padding-top: 120px;
         padding-bottom: 200px;
-        background-color: var(--background-color-footer);
+        background: var(--gradient-emerald);
         width: 100%;
         position: relative;
     }
@@ -3493,14 +3838,28 @@
         padding-top: 60px;
         padding-bottom: 60px;
         box-sizing: border-box;
+        background: transparent;
+        position: relative;
+    }
+
+    .form::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternative.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
     }
 
     .form__container {
         width: 100%;
         padding: 30px;
-        background: var(--background-color-card);
+        background: var(--gradient-card);
         border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(233, 177, 59, 0.3);
+        box-shadow: var(--shadow-gold);
     }
 
     .form__tabs--recording {
@@ -3516,7 +3875,7 @@
         text-align: center;
         padding: 0 20px;
         font-weight: 700;
-        color: var(--background-color-footer);
+        color: var(--text-gold-dark);
     }
 
     .form__container--group {
@@ -3538,7 +3897,8 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         text-transform: uppercase;
     }
 
@@ -3560,7 +3920,7 @@
     }
 
     .form__field:focus-within {
-        border-color: var(--primary-color-button);
+        border-color: var(--text-gold);
     }
 
     .remembers__me {
@@ -3570,7 +3930,7 @@
         cursor: pointer;
         font-family: var(--font-family);
         font-size: 14px;
-        color: var(--primary-color);
+        color: var(--text-dark);
         margin-top: 20px;
         line-height: 1.5;
         text-align: left;
@@ -3589,8 +3949,9 @@
         padding: 20px 40px;
         font-size: 16px;
         margin-top: 30px;
-        background-color: var(--primary-color-button);
-        border: 2px solid var(--primary-color-button);
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        border: 2px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         border-radius: 25px;
         font-weight: 700;
         color: var(--secondary-color);
@@ -3600,10 +3961,10 @@
     }
 
     .btn__pre--recording:hover {
-        background-color: transparent;
-        color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        background: transparent;
+        color: #2d8c66;
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
 
     /* Cookie файлы */
@@ -3614,7 +3975,9 @@
         max-width: 700px;
         padding: 20px;
         border-radius: 24px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        background: var(--gradient-emerald);
+        border: 2px solid rgba(233, 177, 59, 0.4);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
     }
 
     .cookie__text {
@@ -3622,9 +3985,8 @@
         line-height: 1.5;
     }
 
-    .bx.bxs-cookie {
-        font-size: 50px;
-        transform: none !important;
+    .cookie-icon {
+        font-size: 100px;
     }
 
     .cookie__container--label {
@@ -3639,7 +4001,6 @@
         font-family: var(--font-family);
         font-weight: 700;
         text-transform: uppercase;
-        border: 2px solid var(--primary-color-button);
         transition: var(--transition);
         border-radius: var(--border-radius);
     }
@@ -3650,39 +4011,6 @@
     }
     .cookie__container--label {
         order: 2;
-    }
-
-    /* КНОПКА ДОКУМЕНТАЦИИ */
-    .doc_toggle--btn {
-        width: 55px;
-        height: 55px;
-        top: 25px;
-        right: 35px;
-        background: rgba(30, 30, 40, 0.95);
-        border-radius: var(--border-radius);
-        border: 2px solid rgba(255, 255, 255, 0.15);
-        cursor: pointer;
-        z-index: 10001;
-    
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        animation: showDocButton 0.5s ease-in-out 4.5s forwards;
-    }
-    
-    .doc_toggle--btn i {
-        font-size: 29px;
-        color: #888888;
-        transition: var(--transition);
-    }
-    
-    .doc_toggle--btn:hover i {
-        color: var(--primary-color-button);
     }
 }
 
@@ -3722,6 +4050,8 @@
     /* Шапка */
     .header {
         padding-top: 65px;
+        position: relative;
+        background-color: transparent;
     }
     
     .container {
@@ -3743,15 +4073,18 @@
         font-weight: 700;
         font-size: 14px;
         line-height: 19px;
-        color: var(--secondary-color);
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         text-transform: uppercase;
         cursor: pointer;
         transition: var(--transition);
     }
 
     .logo:hover {
-        color: var(--primary-color-button);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     }
 
     .nav__menu {
@@ -3765,28 +4098,54 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 14px;
-        color: var(--secondary-color);
+        color: #2d8c66;
         text-transform: uppercase;
         transition: var(--transition);
         cursor: pointer;
     }
 
     .nav__item:hover {
-        color: var(--primary-color-button);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
     }
 
     /* Главный экран */
     .banner {
         padding-top: 100px;
-        background-color: var(--primary-color);
+        background-color: transparent;
+        position: relative;
+    }
+
+    .background-image {
+        display: none !important;
+    }
+
+    .header::before,
+    .header::after,
+    .banner::after {
+        content: none !important;
+    }
+
+    .banner::before {
+        content: '';
+        position: absolute;
+        top: -131px;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 128px);
+        z-index: -1;
+        background-image: url('../images/main/main_KURBAN_BAIRAM/background_Kurban_Bairam--alternaitive.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .banner__mini--title {
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 18px;
-        color: var(--secondary-color);
+        color: #B07A2A;
+        text-shadow: 0 1px 0 #e6c27a, 0 2px 4px rgba(0, 0, 0, 0.25);
         text-transform: uppercase;
     }
 
@@ -3796,7 +4155,11 @@
         font-size: 40px;
         line-height: 50px;
         max-width: 600px;
-        color: var(--secondary-color);
+        background: linear-gradient(180deg, #fff3b0 0%, #f5d77a 25%, #e0b84f 50%, #c88f2a 75%, #a86f1f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 1px 0 #fff3b0, 0 2px 0 #e0b84f, 0 3px 0 #c88f2a, 0 4px 6px rgba(0, 0, 0, 0.4);
+        filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.5));
         text-transform: uppercase;
         margin-top: 15px;
     }
@@ -3806,7 +4169,7 @@
         font-weight: 700;
         font-size: 19px;
         line-height: 150%;
-        color: var(--secondary-color);
+        color: #000000;
         margin-top: 15px;
         max-width: 430px;
         text-transform: uppercase;
@@ -3821,7 +4184,8 @@
     }
 
     .button {
-        background-color: var(--primary-color-button);
+        background: linear-gradient(180deg, #E29A2A 0%, #C77B1A 60%, #A86412 100%);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
         border-radius: var(--border-radius);
         padding: 20px 65px;
         font-family: var(--font-family);
@@ -3830,37 +4194,37 @@
         color: var(--secondary-color);
         text-transform: uppercase;
         transition: var(--transition);
-        border: 3px solid var(--primary-color-button);
+        border: 3px solid #A86412;
         text-align: center;
     }
 
     .button:hover {
-        border: 3px solid var(--primary-color-button);
-        background-color: transparent;
-        color: var(--secondary-color);
-        box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+        border: 3px solid #A86412;
+        background: transparent;
+        color: #000000;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 4px 10px rgba(0,0,0,0.25);
     }
 
     .btn {
         border-radius: var(--border-radius);
-        background-color: transparent;
+        background: linear-gradient(135deg, #2d8c66 0%, #1a5c41 50%, #0a2f2a 100%);
         color: var(--secondary-color);
         padding: 20px 65px;
         font-weight: 700;
         font-family: var(--font-family);
         font-size: 16px;
-        border: 3px solid var(--primary-color-button);
+        border: 3px solid #2d8c66;
+        box-shadow: 0 5px 15px rgba(45, 140, 102, 0.3);
         text-transform: uppercase;
         transition: var(--transition);
         text-align: center;
     }
 
     .btn:hover {
-        background-color: var(--primary-color-button);
-        color: var(--secondary-color);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        background: transparent;
+        color: #2d8c66;
+        border-color: #2d8c66;
+        box-shadow: 0 0 20px rgba(45, 140, 102, 0.5), 0 5px 15px rgba(45, 140, 102, 0.2);
     }
     
     .images {
@@ -3871,15 +4235,12 @@
         width: 30%;
         z-index: 2;
         transition: transform var(--transition);
+        filter: drop-shadow(0 20px 30px rgba(233, 177, 59, 0.4));
         cursor: pointer;
     }
 
     .images:hover {
         transform: scale(1.1);
-    }
-
-    .bg-effect {
-        display: none;
     }
 
     /* Для кого? */
@@ -3911,8 +4272,9 @@
     }
 
     .for-whom__card {
-        background: var(--background-color-card);
-        border: 3px solid var(--primary-color);
+        background: var(--gradient-card);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         display: flex;
         align-items: center;
@@ -3922,16 +4284,30 @@
         padding: 25px 20px 25px 55px;
         position: relative;
         margin: 0;
+        cursor: pointer;
+    }
+
+    .for-whom__card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
     }
 
     .for-whom__images {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         position: absolute;
-        left: -35px;
+        left: -31px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        cursor: pointer;
+    }
+
+    .for-whom__images {
+        transform: translateY(-50%) scale(1.1);
+        filter: drop-shadow(0 6px 12px rgba(233, 177, 59, 0.5));
     }
 
     .for-whom__desc {
@@ -3939,7 +4315,7 @@
         font-weight: 500;
         font-size: 15px;
         line-height: 1.4;
-        color: var(--primary-color);
+        color: var(--text-dark);
         text-transform: uppercase;
         margin: 0;
         padding-left: 0;
@@ -3963,7 +4339,8 @@
         font-size: 19px;
         line-height: 1.4;
         text-align: center;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         width: 100%;
         max-width: 650px;
         text-transform: uppercase;
@@ -3971,13 +4348,13 @@
     }
 
     .button__for-whom {
-        background-color: var(--primary-color-button);
+        background: var(--gradient-gold);
         border-radius: var(--border-radius);
         padding: 21px 65px;
         font-family: var(--font-family);
         font-size: 17px;
         font-weight: 700;
-        color: var(--secondary-color);
+        color: var(--primary-color);
         text-transform: uppercase;
         border: 3px solid var(--primary-color-button);
         text-align: center;
@@ -3986,10 +4363,7 @@
     }
 
     .button__for-whom:hover {
-        background-color: transparent;
-        color: var(--primary-color-button);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 5px 15px rgba(163, 135, 196, 0.4);
+        box-shadow: 0 15px 35px rgba(233, 177, 59, 0.5);
     }
 
     .super__woman--images {
@@ -3999,6 +4373,7 @@
         margin: 30px auto 0;
         position: relative;
         top: 0;
+        filter: drop-shadow(0 15px 30px rgba(233, 177, 59, 0.4));
     }
 
     /* Что будет на интенсиве */
@@ -4010,7 +4385,11 @@
         font-size: 40px;
         text-align: center;
         width: 100%;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
     }
 
@@ -4029,12 +4408,33 @@
         align-items: center;
         gap: 18px;
         min-width: 0;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: var(--border-radius);
+        padding: 20px 15px;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(233, 177, 59, 0.2);
+        cursor: pointer;
+    }
+
+    .program__content--list:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        background: rgba(233, 177, 59, 0.15);
+        box-shadow: var(--shadow-gold);
     }
 
     .program__images {
         width: 65px;
         height: 65px;
         flex-shrink: 0;
+        filter: drop-shadow(0 0 15px rgba(233, 177, 59, 0.9));
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .program__images:hover {
+        transform: scale(1.1);
     }
 
     .program__desc {
@@ -4050,7 +4450,6 @@
     .program__span {
         font-size: 19px;
         line-height: 150%;
-        color: var(--secondary-color);
         font-weight: 700;
         font-family: var(--font-family);
         text-transform: uppercase;
@@ -4063,7 +4462,11 @@
         font-size: 40px;
         text-align: center;
         width: 100%;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 45px;
         margin-top: -30px;
@@ -4076,7 +4479,6 @@
         font-family: var(--font-family);
         font-size: 19px;
         line-height: 1.6;
-        color: var(--secondary-color);
         text-align: center;
     }
 
@@ -4087,7 +4489,6 @@
         font-family: var(--font-family);
         font-size: 19px;
         line-height: 1.6;
-        color: var(--secondary-color);
         text-align: center;
     }
 
@@ -4116,7 +4517,10 @@
         font-weight: 700;
         font-size: 45px;
         line-height: 46px;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         text-align: center;
     }
 
@@ -4126,7 +4530,7 @@
         font-weight: 500;
         font-size: 19px;
         line-height: 140%;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-align: center;
     }
 
@@ -4137,7 +4541,7 @@
         font-family: var(--font-family);
         font-size: 20px;
         line-height: 1.6;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-align: center;
     }
 
@@ -4152,6 +4556,14 @@
         top: -150px;
         margin-bottom: 50px;
         border-radius: var(--border-radius);
+        box-shadow: var(--shadow-gold);
+        border: 3px solid rgba(233, 177, 59, 0.3);
+    }
+
+    .about__main--images:hover {
+        transform: scale(1.02);
+        border-color: var(--text-gold);
+        box-shadow: 0 20px 40px rgba(233, 177, 59, 0.4);
     }
 
     /* Лист уроков интенсива */
@@ -4167,7 +4579,11 @@
         line-height: 150%;
         text-align: center;
         width: 100%;
-        color: var(--primary-alternaite-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         margin-bottom: 45px;
     }
 
@@ -4179,7 +4595,7 @@
     }
 
     .accordion-item {
-        border-bottom: 3px solid var(--primary-color);
+        border-bottom: 3px solid rgba(26, 92, 65, 0.15);
     }
 
     .accordion-toggle {
@@ -4205,6 +4621,10 @@
         padding-right: 25px;
     }
 
+    .accordion-label:hover .lesson-title {
+        color: var(--text-gold-dark);
+    }
+
     .icon {
         position: relative;
         width: 24px;
@@ -4216,7 +4636,7 @@
     .icon::before, .icon::after {
         content: '';
         position: absolute;
-        background-color: var(--primary-color);
+        background-color: var(--text-gold-dark);
         transition: var(--transition);
     }
 
@@ -4253,7 +4673,7 @@
         background-color: transparent !important;
         font-size: 17px;
         line-height: 1.6;
-        color: var(--primary-color);
+        color: var(--text-muted);
     }
 
     .accordion-toggle:checked ~ .accordion-content {
@@ -4278,16 +4698,30 @@
         font-weight: 700;
         font-size: 21px;
         line-height: 150%;
-        color: var(--primary-color);
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
         text-align: center;
         width: 100%;
         max-width: 650px;
         order: -1;
     }
 
+    .lesson--title--number {
+        font-weight: 700;
+        color: var(--text-gold);
+    }
+
+    /* При наведении на весь блок .accordion-label меняется текст */
+    .accordion-label:hover .lesson--title--number {
+        color: #3da87a;
+        text-shadow: 0 0 10px rgba(45, 140, 102, 0.8), 0 0 20px rgba(45, 140, 102, 0.4);
+        text-shadow: none;
+        animation: titleGlow 2s ease-in-out infinite alternate;
+    }
+
     /* Тарифы участия */
     .pricing {
-        background-color: var(--primary-color);
+        background: var(--gradient-emerald);
         padding-top: 120px;
     }
 
@@ -4296,7 +4730,11 @@
         font-weight: 700;
         font-size: 42px;
         text-align: center;
-        color: var(--secondary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 40px;
     }
@@ -4311,18 +4749,25 @@
     }
 
     .pricing__content--card {
-        background-color: var(--background-color-card);
+        background: var(--gradient-card);
+        border: 2px solid rgba(233, 177, 59, 0.2);
+        box-shadow: var(--shadow-soft);
         border-radius: var(--border-radius);
         width: 350px;
         padding: 60px 25px 0 30px;
         position: relative;
     }
 
+    .pricing__content--card:hover {
+        transform: translateY(-5px);
+        border-color: var(--text-gold);
+        box-shadow: var(--shadow-gold);
+    }
+
     .pricing__content__card--title {
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--primary-color);
         text-transform: uppercase;
         margin-bottom: 15px;
     }
@@ -4333,7 +4778,6 @@
         font-size: 14px;
         line-height: 150%;
         text-transform: uppercase;
-        color: var(--primary-color);
         margin-bottom: 8px;
         display: flex;
         gap: 8px;
@@ -4349,7 +4793,6 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 15px;
-        color: var(--primary-color);
         text-transform: uppercase;
         margin-top: 15px;
         margin-bottom: 8px;
@@ -4360,12 +4803,11 @@
         font-family: var(--font-family);
         font-weight: 500;
         font-size: 12px;
-        color: var(--primary-color);
         text-transform: uppercase;
         margin: 0;
-        margin-right: 50px;
+        margin-right: 47px;
         text-align: center;
-        margin-bottom: 47px;
+        margin-bottom: 40px;
     }
 
     .pricing__content__condition--span {
@@ -4377,19 +4819,18 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--primary-color);
         margin: 0;
         text-align: center;
     }
 
     .pricing__content--button {
-        background-color: var(--primary-color-button);
+        background: var(--gradient-gold);
         border-radius: var(--border-radius);
         padding: 18px 65px;
         font-family: var(--font-family);
         font-size: 16px;
         font-weight: 700;
-        color: var(--secondary-color);
+        color: var(--primary-color);
         text-transform: uppercase;
         transition: var(--transition);
         border: 3px solid var(--primary-color-button);
@@ -4397,12 +4838,8 @@
     }
 
     .pricing__content--button:hover {
-        border: 3px solid var(--primary-color);
-        background-color: var(--primary-color-button);
         color: var(--secondary-color);
-        border-color: var(--primary-color-button);
-        box-shadow: 0 0 15px rgba(163, 135, 196, 0.6), inset 0 0 15px rgba(163, 135, 196, 0.1);
-        text-shadow: 0 0 5px rgba(163, 135, 196, 0.3);
+        box-shadow: 0 15px 35px rgba(233, 177, 59, 0.5);
     }
 
     .pricing__content--images {
@@ -4411,7 +4848,7 @@
         left: 275px;
         width: 110px;
         height: 110px;
-        object-fit: cover;
+        object-fit: contain;
         transition: var(--transition);
         cursor: pointer;
     }
@@ -4439,7 +4876,8 @@
     .pricing__content__stories--text {
         text-align: center;
         font-size: 17px;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         line-height: 1.6;
         width: 100%;
         max-width: 500px;
@@ -4474,6 +4912,11 @@
         padding-bottom: 140px;
     }
 
+    .short__name:hover {
+        color: var(--text-gold);
+        text-shadow: var(--glow-gold);
+    }
+
     /* А такие вопросы могут быть у вас */
     .questions__title {
         font-family: var(--font-family);
@@ -4481,7 +4924,11 @@
         font-size: 42px;
         text-align: center;
         width: 100%;
-        color: var(--primary-color);
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: titleGlow 2s ease-in-out infinite alternate;
         text-transform: uppercase;
         margin-bottom: 45px;
         margin-top: -40px;
@@ -4509,7 +4956,6 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 1.5;
-        color: var(--primary-color);
         text-transform: uppercase;
     }
 
@@ -4517,7 +4963,7 @@
     .footer {
         padding-top: 125px;
         padding-bottom: 109px;
-        background-color: var(--background-color-footer);
+        background: var(--gradient-emerald);
         width: 100%;
         position: relative;
     }
@@ -4544,14 +4990,15 @@
     }
 
     .footer__logo:hover {
-        color: var(--primary-color-button);
+        color: var(--text-gold);
+        text-shadow: var(--glow-gold);
     }
 
     .inn {
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-transform: uppercase;
         margin-top: 8px;
         margin-bottom: 8px;
@@ -4561,7 +5008,7 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-transform: uppercase;
         line-height: 1.4;
     }
@@ -4596,8 +5043,9 @@
     }
 
     .up__link:hover .bx.bx-up-arrow-alt {
-        color: var(--primary-color-button);
-        transform: scale(1.1);
+        color: var(--text-gold);
+        transform: scale(1.1) translateY(-5px);
+        filter: drop-shadow(0 0 10px rgba(233, 177, 59, 0.5));
     }
 
     /* Иконки соцсетей */
@@ -4614,13 +5062,15 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(233, 177, 59, 0.3);
         transition: var(--transition);
     }
 
     .social__icons a:hover {
-        background-color: var(--primary-color-button);
+        background: var(--gradient-gold);
         transform: scale(1.1);
+        border-color: transparent;
     }
 
     .social__icons i {
@@ -4645,13 +5095,14 @@
         font-family: var(--font-family);
         font-weight: 700;
         font-size: 16px;
-        color: var(--secondary-color);
+        color: var(--text-light-gold);
         text-transform: uppercase;
         transition: var(--transition);
     }
 
     .political__confidencial:hover, .oferta:hover, .hire__me:hover {
-        color: var(--primary-color-button);
+        color: var(--text-gold);
+        text-shadow: var(--glow-gold);
     }
 
     .social__icons {
@@ -4695,8 +5146,8 @@
         line-height: 1.4;
     }
 
-    .bx.bxs-cookie {
-        font-size: 58px;
+    .cookie-icon {
+        font-size: 150px;
     }
 
     .cookie__container--label {
@@ -4708,38 +5159,5 @@
     .cookie__decline {
         padding: 10px 20px;
         font-size: 15px;
-    }
-
-    /* КНОПКА ДОКУМЕНТАЦИИ */
-    .doc_toggle--btn {
-        width: 58px;
-        height: 58px;
-        top: 17px;
-        right: 33px;
-        background: rgba(30, 30, 40, 0.95);
-        border-radius: var(--border-radius);
-        border: 2px solid rgba(255, 255, 255, 0.15);
-        cursor: pointer;
-        z-index: 10001;
-    
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-        animation: showDocButton 0.5s ease-in-out 4.5s forwards;
-    }
-    
-    .doc_toggle--btn i {
-        font-size: 32px;
-        color: #888888;
-        transition: var(--transition);
-    }
-    
-    .doc_toggle--btn:hover i {
-        color: var(--primary-color-button);
     }
 }
